@@ -2,7 +2,7 @@
 # Splits the film across 20 GitHub Actions runners (frame-range chunks, headless Chromium +
 # SwiftShader WebGL rendering the charsys engine in work/cartoon), then concatenates the chunks
 # and muxes the film's voice wav. Manual trigger only. Nothing runs on push.
-name: Cartoon Fleet Render — backrooms example
+name: Cartoon Fleet Render — backrooms example (v1)
 
 on:
   workflow_dispatch:
