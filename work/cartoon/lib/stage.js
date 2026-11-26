@@ -253,7 +253,7 @@ export function createStage({ canvas, setStyle = true } = {}) {
       const stack = capStack(fams, '"Segoe UI Black", "Arial Black", "Segoe UI", Arial, sans-serif');
       let fs = Math.round(wide ? H * .085 : W * .118); g.font = `900 ${fs}px ${stack}`;
       const tw = g.measureText(text.text).width; if (tw > W * .86) { fs = Math.floor(fs * W * .86 / tw); }
-      g.save(); g.translate(W / 2, H * (wide ? .8 : .7)); g.scale(pop, pop);
+      g.save(); g.translate(W / 2, H * (S?.captionY ?? (wide ? .8 : .7))); g.scale(pop, pop);
       g.font = `900 ${fs}px ${stack}`; g.textAlign = 'center'; g.textBaseline = 'middle'; g.lineJoin = 'round';
       g.lineWidth = fs * .26; g.strokeStyle = '#1e161c'; g.strokeText(text.text, 0, 0);
       g.fillStyle = '#fffaf0'; g.fillText(text.text, 0, 0); g.restore();

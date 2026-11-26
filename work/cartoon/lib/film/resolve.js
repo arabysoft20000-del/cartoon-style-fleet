@@ -462,7 +462,8 @@ export async function resolveFilm(film, io, opts = {}) {
   if (ownSet) log(`set: the film's own ${ownSet.label || ownSet.module}`);
   const scene = { width: W, height: H, sky: world.sky, ground: world.ground, shadow: world.shadow, grid: world.grid, set: ownSet ? 'own' : await setOf(world.set, io), setOpts: world.setOpts, ...(ownSet ? { setModule: ownSet.module } : {}), characters,
     props: filmProps, handovers: resolveTimes(film.handovers || [], R, 'handovers'), shots: shotsMoved, film: opts.name,
-    ...(film.language ? { lang: String(film.language) } : {}) };   // (the captions' language: lab/stage.js capFaces; the app's host passes the project's)
+    ...(film.language ? { lang: String(film.language) } : {}),
+    ...(film.captionY != null ? { captionY: film.captionY } : {}) };   // (the captions' language: lab/stage.js capFaces; the app's host passes the project's; captionY: words-caption centre override, stage.js default .7/.8)
   for (const h of scene.handovers) {
     const p = scene.props.find(p => p.id === h.prop); if (!p) throw new Error(`MAKE_FILM FAILED: handover of unknown prop "${h.prop}"`);
     p.keys = [...(p.keys || []), { t: h.t, owner: h.to, in: 'hand:' + (h.toSide || 'R'), rot: h.rot ?? p.rot, at: h.offset }].sort((a, b) => a.t - b.t);
