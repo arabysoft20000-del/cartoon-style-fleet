@@ -1,0 +1,36 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>cartoon fleet render harness</title></head>
+<body>
+<canvas id="out"></canvas>
+<script type="module">
+import { initFilm } from '/work/cartoon/engine.js';
+const qs = new URLSearchParams(location.search);
+const filmPath = qs.get('film') || 'film.json';
+const projectBase = qs.get('base') || '/work/cartoon/examples/backrooms_shaded_one_take/';
+const W = +(qs.get('w') || 1080), H = +(qs.get('h') || 1920);
+window.errors = [];
+window.addEventListener('error', e => window.errors.push(String(e.message || e.error)));
+window.addEventListener('unhandledrejection', e => window.errors.push(String(e.reason?.message || e.reason)));
+let F = null;
+window.ready = (async () => {
+  const t0 = performance.now();
+  F = await initFilm({ projectBase, film: filmPath, quality: 'full', width: W, height: H, captions: true, log: (...a) => console.log('[film]', ...a) });
+  window.F = F;
+  return { initMs: Math.round(performance.now() - t0), info: { name: F.info.name, dur: F.info.dur, N: F.info.N, fps: F.info.fps, W: F.info.W, H: F.info.H, shots: (F.info.shots || []).length, gl: F.info.gl } };
+})();
+// Render frames [start..end] inclusive at fps, POST each JPEG to /frames/<n>.jpg on the same origin.
+window.renderRange = async (start, end, fps) => {
+  const t0 = performance.now(); let engineMs = 0, n = 0;
+  for (let f = start; f <= end; f++) {
+    const r = await F.frame(f / fps);
+    engineMs += r.ms || 0;
+    const blob = await new Promise(res => r.canvas.toBlob(res, 'image/jpeg', 0.95));
+    const resp = await fetch(`/frames/${f}.jpg`, { method: 'POST', body: blob });
+    if (!resp.ok) throw new Error(`frame POST ${f} failed: HTTP ${resp.status}`);
+    n++;
+    if (n % 10 === 0) console.log(`PROGRESS ${n} ${end - start + 1} avg_engine_ms=${(engineMs / n).toFixed(1)}`);
+  }
+  return { frames: n, engineMs: Math.round(engineMs), wallMs: Math.round(performance.now() - t0) };
+};
+</script>
+</body></html>

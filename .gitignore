@@ -1,0 +1,5 @@
+node_modules/
+frames/
+chunks/
+proof/
+*.mp4

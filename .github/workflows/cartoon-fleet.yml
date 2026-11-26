@@ -1,0 +1,106 @@
+# Cartoon-style fleet render — backrooms example film (974 frames, 1080x1920, 30 fps)
+# Splits the film across 20 GitHub Actions runners (frame-range chunks, headless Chromium +
+# SwiftShader WebGL rendering the charsys engine in work/cartoon), then concatenates the chunks
+# and muxes the film's voice wav. Manual trigger only. Nothing runs on push.
+name: Cartoon Fleet Render — backrooms example
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  render:
+    name: chunk ${{ matrix.chunk }} (frames ${{ matrix.start }}-${{ matrix.end }})
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - {chunk: "00", start: 0, end: 48}
+          - {chunk: "01", start: 49, end: 97}
+          - {chunk: "02", start: 98, end: 146}
+          - {chunk: "03", start: 147, end: 195}
+          - {chunk: "04", start: 196, end: 244}
+          - {chunk: "05", start: 245, end: 293}
+          - {chunk: "06", start: 294, end: 342}
+          - {chunk: "07", start: 343, end: 391}
+          - {chunk: "08", start: 392, end: 440}
+          - {chunk: "09", start: 441, end: 489}
+          - {chunk: "10", start: 490, end: 538}
+          - {chunk: "11", start: 539, end: 587}
+          - {chunk: "12", start: 588, end: 636}
+          - {chunk: "13", start: 637, end: 685}
+          - {chunk: "14", start: 686, end: 733}
+          - {chunk: "15", start: 734, end: 781}
+          - {chunk: "16", start: 782, end: 829}
+          - {chunk: "17", start: 830, end: 877}
+          - {chunk: "18", start: 878, end: 925}
+          - {chunk: "19", start: 926, end: 973}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Cache node_modules and Playwright browsers
+        uses: actions/cache@v4
+        with:
+          path: |
+            node_modules
+            ~/.cache/ms-playwright
+          key: cartoon-fleet-v1-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
+      - name: Install dependencies (latest Playwright, pinned by lockfile)
+        run: npm ci
+      - name: Install Playwright Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Ensure ffmpeg
+        run: command -v ffmpeg >/dev/null || (sudo apt-get update && sudo apt-get install -y ffmpeg)
+      - name: Render chunk ${{ matrix.chunk }}
+        run: |
+          mkdir -p "$GITHUB_WORKSPACE/chunks"
+          node scripts/render-chunk.mjs ${{ matrix.start }} ${{ matrix.end }} "$GITHUB_WORKSPACE/chunks/chunk-${{ matrix.chunk }}.mp4"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: chunk-${{ matrix.chunk }}
+          path: chunks/chunk-${{ matrix.chunk }}.mp4
+          if-no-files-found: error
+
+  assemble:
+    name: assemble final.mp4
+    needs: render
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - name: Ensure ffmpeg
+        run: command -v ffmpeg >/dev/null || (sudo apt-get update && sudo apt-get install -y ffmpeg)
+      - uses: actions/download-artifact@v4
+        with:
+          path: chunks
+          pattern: chunk-*
+          merge-multiple: true
+      - name: Verify chunk count and frame counts
+        run: |
+          ls chunks/
+          test "$(ls chunks/chunk-*.mp4 | wc -l)" = "20"
+          total=0
+          for f in chunks/chunk-*.mp4; do
+            n=$(ffprobe -v error -select_streams v:0 -count_frames -show_entries stream=nb_read_frames -of csv=p=0 "$f")
+            echo "$f frames=$n"
+            total=$((total + n))
+          done
+          echo "TOTAL FRAMES: $total"
+          test "$total" = "974"
+      - name: Concatenate and mux voice
+        run: |
+          for f in $(ls chunks/chunk-*.mp4 | sort); do echo "file '$PWD/$f'"; done > concat.txt
+          ffmpeg -y -f concat -safe 0 -i concat.txt -c copy video.mp4
+          ffmpeg -y -i video.mp4 -i work/cartoon/examples/backrooms_shaded_one_take/voice/vo_trimmed.wav -c:v copy -c:a aac -b:a 192k final.mp4
+          ffprobe -v error -show_entries format=duration,size -show_entries stream=codec_name,width,height,r_frame_rate,nb_frames -of default=noprint_wrappers=1 final.mp4
+      - uses: actions/upload-artifact@v4
+        with:
+          name: final
+          path: final.mp4
+          if-no-files-found: error
