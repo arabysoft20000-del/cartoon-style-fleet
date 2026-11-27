@@ -193,11 +193,9 @@ export async function buildSet(THREE, scene, opts, kit) {
     // two dug HOLES at the base (x -2, +3): dark mouth, broken rim, rubble — holes, NOT gates
     const holeM = surf('field', '#0c0e14', { grime: .2 });
     for (const hx of [-2, 3]) {
-      box(3.4, 3.1, .3, holeM, hx, 0, -22.72, G);                   // dark mouth proud of the face (enlarged: must read behind the herd)
+      box(3.4, 3.1, .3, holeM, hx, 0, -24.2, G);                   // dark mouth behind the GLB arch (v2c: was -22.72 proud of face, covered HY3D archcards at -23.3)
       box(3.0, 2.8, 2.2, holeM, hx, 0, -24.6, G);                   // dark throat behind (depth, not a flat card)
-      for (let i = 0; i < 7; i++) { const a = i / 7 * Math.PI;       // broken rim stones round the mouth
-        box(.6, .5, .35, wallDark, hx + Math.cos(a) * 2.05, Math.sin(a) * 3.0, -22.66, G, [0, 0, (R1(i, hx) - .5) * .6]); }  // broken rim round the enlarged mouth
-      for (let i = 0; i < 8; i++) box(.3 + R1(i, hx + 2) * .4, .22, .3, wallDark, hx + (R1(i, hx + 3) - .5) * 3.4, 0, -21.6 + R1(i, hx + 4) * 1.2, G, [0, R1(i, hx + 5) * 3, 0]); // rubble
+      // previz rim stones + rubble boxes removed (v2b): HY3D GLB now carries arch mouths + rubble at both breaches
       const mound = add(new THREE.SphereGeometry(1, 10, 7), surf('field', '#5f6a7c', { map: dirtTex, uv: 1, tile: [2, 2], grime: .5 }), hx + 1.9, -.35, -21.8, G); mound.scale.set(1.6, .55, 1.2); // dug earth
     }
     torch('field', G, -3.4, 0, -22.4, 2.0, 3.1); torch('field', G, 4.4, 0, -22.4, 2.0, 5.7); // practicals at the holes (lights torchL/R)

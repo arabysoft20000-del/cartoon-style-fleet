@@ -107,6 +107,11 @@
       "tiandan"
      ],
      [
+      46.29,
+      48.74,
+      11.0
+     ],
+     [
       48.74,
       57.44,
       "jijie"
@@ -115,16 +120,16 @@
     "places": {
      "field": {
       "air": {
-       "density": 0.0045,
+       "density": 0.0036,
        "start": [
         6,
         40
        ],
        "far": 90,
        "color": [
-        0.012,
-        0.018,
-        0.032
+        0.02,
+        0.03,
+        0.05
        ],
        "lights": 0.26,
        "g": 0.3,
@@ -152,15 +157,15 @@
        "dead": 0.4
       },
       "bloom": {
-       "k": 0.3,
+       "k": 0.18,
        "thr": 1.08
       },
       "grade": {
-       "gamma": 1.08,
+       "gamma": 1.15,
        "contrast": 1.0,
-       "saturation": 0.98,
+       "saturation": 1.08,
        "gb": 1.08,
-       "vignette": 0.39269908169872414
+       "vignette": 0.3141592653589793
       },
       "particles": [
        {
@@ -241,16 +246,16 @@
      },
      "city": {
       "air": {
-       "density": 0.0055,
+       "density": 0.0044,
        "start": [
         5,
         30
        ],
        "far": 70,
        "color": [
-        0.012,
-        0.017,
-        0.03
+        0.02,
+        0.028,
+        0.048
        ],
        "lights": 0.3,
        "g": 0.3,
@@ -264,15 +269,15 @@
        "dead": 0.4
       },
       "bloom": {
-       "k": 0.3,
+       "k": 0.18,
        "thr": 1.08
       },
       "grade": {
-       "gamma": 1.08,
+       "gamma": 1.15,
        "contrast": 1.0,
-       "saturation": 0.98,
+       "saturation": 1.08,
        "gb": 1.08,
-       "vignette": 0.39269908169872414
+       "vignette": 0.3141592653589793
       },
       "particles": [
        {
@@ -353,16 +358,16 @@
      },
      "camp": {
       "air": {
-       "density": 0.008,
+       "density": 0.0064,
        "start": [
         5,
         28
        ],
        "far": 60,
        "color": [
-        0.02,
-        0.014,
-        0.008
+        0.03,
+        0.022,
+        0.013
        ],
        "lights": 0.32,
        "g": 0.3,
@@ -376,16 +381,16 @@
        "dead": 0.4
       },
       "bloom": {
-       "k": 0.32,
+       "k": 0.19,
        "thr": 1.08
       },
       "grade": {
-       "gamma": 1.02,
+       "gamma": 1.08,
        "contrast": 1.05,
        "saturation": 1.08,
        "gr": 1.06,
        "gb": 0.94,
-       "vignette": 0.39269908169872414
+       "vignette": 0.3141592653589793
       },
       "particles": [
        {
@@ -490,7 +495,7 @@
        "dead": 0.4
       },
       "bloom": {
-       "k": 0.32,
+       "k": 0.19,
        "thr": 1.08
       },
       "grade": {
@@ -499,7 +504,7 @@
        "saturation": 1.25,
        "gr": 1.2,
        "gb": 0.8,
-       "vignette": 0.39269908169872414
+       "vignette": 0.3141592653589793
       },
       "particles": [
        {
@@ -604,7 +609,7 @@
        "dead": 0.4
       },
       "bloom": {
-       "k": 0.28,
+       "k": 0.17,
        "thr": 1.08
       },
       "grade": {
@@ -699,7 +704,7 @@
      ],
      "places": {
       "field": {
-       "exposure": 0.95,
+       "exposure": 1.05,
        "sat": 0.95,
        "keyTint": [
         0.92,
@@ -707,20 +712,20 @@
         1.1
        ],
        "hard": 0.55,
-       "front": 0.1,
+       "front": 0.13,
        "rim": 0.6,
        "rimFill": 0.8,
        "low": 0.44,
        "chest": 0.38,
        "floor": [
-        0.3,
-        0.36,
-        0.48
+        0.34,
+        0.4,
+        0.52
        ],
        "keyMin": [
-        0.62,
-        0.68,
-        0.82
+        0.7,
+        0.76,
+        0.9
        ],
        "aerial": {
         "color": [
@@ -747,7 +752,7 @@
        }
       },
       "city": {
-       "exposure": 0.95,
+       "exposure": 1.05,
        "sat": 0.95,
        "keyTint": [
         0.94,
@@ -755,20 +760,20 @@
         1.08
        ],
        "hard": 0.55,
-       "front": 0.1,
+       "front": 0.13,
        "rim": 0.55,
        "rimFill": 0.8,
        "low": 0.44,
        "chest": 0.38,
        "floor": [
-        0.32,
         0.36,
-        0.46
+        0.4,
+        0.5
        ],
        "keyMin": [
-        0.64,
-        0.68,
-        0.8
+        0.72,
+        0.76,
+        0.88
        ],
        "aerial": {
         "color": [
@@ -795,7 +800,7 @@
        }
       },
       "camp": {
-       "exposure": 1,
+       "exposure": 1.06,
        "sat": 1,
        "keyTint": [
         1.05,
@@ -803,7 +808,7 @@
         0.8
        ],
        "hard": 0.5,
-       "front": 0.12,
+       "front": 0.14,
        "rim": 0.6,
        "rimFill": 0.9,
        "low": 0.46,
@@ -1214,6 +1219,17 @@
    ]
   },
   {
+   "id": "drumstick",
+   "kind": "drumstick",
+   "owner": "csol1",
+   "in": "hand:R",
+   "rot": [
+    0,
+    0,
+    45
+   ]
+  },
+  {
    "id": "pot",
    "kind": "pot",
    "owner": "town2",
@@ -1237,7 +1253,7 @@
    "owner": "town2",
    "in": "hand:R",
    "rot": [
-    75,
+    150,
     0,
     0
    ],
@@ -1291,9 +1307,21 @@
     },
     {
      "t": "line:2.start-0.1",
-     "eyes": "sad",
-     "brow": "knit",
+     "eyes": "half",
+     "brow": "worried",
      "mouth": "frown"
+    },
+    {
+     "t": "line:2.word:8+0.067",
+     "eyes": "half",
+     "brow": "worried",
+     "mouth": "o"
+    },
+    {
+     "t": "line:2.word:19+0.067",
+     "eyes": "wince",
+     "brow": "knit",
+     "mouth": "tight"
     },
     {
      "t": "line:4.start-0.1",
@@ -1302,10 +1330,16 @@
      "mouth": "flat"
     },
     {
+     "t": "line:4.word:6+0.067",
+     "eyes": "half",
+     "brow": "quizzical",
+     "mouth": "flat"
+    },
+    {
      "t": "line:4.word:18+0.067",
      "eyes": "sad",
      "brow": "worried",
-     "mouth": "frown"
+     "mouth": "o"
     },
     {
      "t": "line:4.word:24+0.067",
@@ -1333,6 +1367,13 @@
      "hold": true
     },
     {
+     "t": "line:9.word:15+0.067",
+     "eyes": "arc",
+     "brow": "on",
+     "mouth": "smile",
+     "hold": true
+    },
+    {
      "t": "line:9.word:17+0.067",
      "eyes": "arc",
      "brow": "on",
@@ -1342,11 +1383,49 @@
    ],
    "clips": [
     {
+     "clip": "hand_to_temple",
+     "at": "line:2.word:8+0.1",
+     "params": {
+      "side": "R",
+      "hold": 40
+     }
+    },
+    {
+     "clip": "hand_to_temple",
+     "at": "line:4.word:6+0.1",
+     "params": {
+      "side": "R",
+      "hold": 30
+     }
+    },
+    {
      "clip": "shrug",
      "at": "line:4.word:12+0.1",
      "params": {
       "hold": 10
      }
+    },
+    {
+     "clip": "talk_hands",
+     "at": "line:4.word:12+0.1",
+     "params": {
+      "dur": 1.2,
+      "side": "R"
+     }
+    },
+    {
+     "clip": "point",
+     "at": "line:4.word:17+0.1",
+     "params": {
+      "side": "R",
+      "dir": [
+       0.9,
+       0.25,
+       0.5
+      ]
+     },
+     "hold": 1.2,
+     "out": 6
     },
     {
      "clip": "point",
@@ -1377,6 +1456,20 @@
      "out": 6
     },
     {
+     "clip": "point",
+     "at": "line:5.word:8+0.1",
+     "params": {
+      "side": "L",
+      "dir": [
+       0.8,
+       0.05,
+       0.25
+      ]
+     },
+     "hold": 1.0,
+     "out": 6
+    },
+    {
      "clip": "talk_hands",
      "at": "line:5.word:11+0.1",
      "params": {
@@ -1388,10 +1481,20 @@
      "clip": "lean_back",
      "at": "line:9.word:10+0.1",
      "params": {
-      "deg": 6
+      "to": -6
      },
      "hold": 1.0,
      "out": 6
+    },
+    {
+     "clip": "react",
+     "at": "line:9.word:15+0.1",
+     "params": {
+      "kind": "lean_in",
+      "deg": 4,
+      "hold": 6,
+      "back": 6
+     }
     }
    ],
    "look": [
@@ -1487,6 +1590,12 @@
      "mouth": "tight"
     },
     {
+     "t": "line:4.start-0.1",
+     "eyes": "sad",
+     "brow": "knit",
+     "mouth": "frown"
+    },
+    {
      "t": "line:4.word:24+0.067",
      "eyes": "open",
      "brow": "up",
@@ -1497,6 +1606,12 @@
      "eyes": "stare",
      "brow": "down",
      "mouth": "flat"
+    },
+    {
+     "t": "line:7.word:13+0.067",
+     "eyes": "stare",
+     "brow": "knit",
+     "mouth": "o"
     },
     {
      "t": "line:9.word:10-0.1",
@@ -1518,10 +1633,47 @@
      }
     },
     {
+     "clip": "react",
+     "at": "line:2.word:8+0.13",
+     "params": {
+      "kind": "slump",
+      "deg": 8,
+      "hold": 25,
+      "back": 10
+     }
+    },
+    {
+     "clip": "react",
+     "at": "line:2.word:8+0.13",
+     "params": {
+      "kind": "lean_in",
+      "deg": 7,
+      "hold": 25,
+      "back": 10
+     }
+    },
+    {
+     "clip": "head_turn",
+     "at": "line:2.word:19+0.1",
+     "params": {
+      "yaw": -25
+     }
+    },
+    {
      "clip": "head_turn",
      "at": "line:4.word:24+0.1",
      "params": {
       "yaw": -25
+     }
+    },
+    {
+     "clip": "react",
+     "at": "line:4.word:24+0.1",
+     "params": {
+      "kind": "lean_in",
+      "deg": 6,
+      "hold": 15,
+      "back": 8
      }
     },
     {
@@ -1536,7 +1688,8 @@
        -0.55,
        1.35,
        0.35
-      ]
+      ],
+      "prop": "drumstick"
      }
     },
     {
@@ -1551,7 +1704,8 @@
        -0.55,
        1.35,
        0.35
-      ]
+      ],
+      "prop": "drumstick"
      }
     },
     {
@@ -1566,7 +1720,8 @@
        -0.55,
        1.35,
        0.35
-      ]
+      ],
+      "prop": "drumstick"
      }
     },
     {
@@ -1581,7 +1736,8 @@
        -0.55,
        1.35,
        0.35
-      ]
+      ],
+      "prop": "drumstick"
      }
     },
     {
@@ -1596,7 +1752,8 @@
        -0.55,
        1.35,
        0.35
-      ]
+      ],
+      "prop": "drumstick"
      },
      "hold": 0.6,
      "out": 6
@@ -1630,9 +1787,9 @@
     {
      "t": "line:7.word:13-0.05",
      "at": [
-      390,
+      389.5,
       6.2,
-      -2.1
+      0.8
      ]
     }
    ],
@@ -1658,6 +1815,12 @@
      "react": false
     },
     {
+     "t": "line:2.start-0.1",
+     "eyes": "half",
+     "brow": "down",
+     "mouth": "flat"
+    },
+    {
      "t": "line:5.start-0.1",
      "eyes": "half",
      "brow": "down",
@@ -1676,6 +1839,12 @@
      "mouth": "flat"
     },
     {
+     "t": "line:6.word:4+0.067",
+     "eyes": "stare",
+     "brow": "up",
+     "mouth": "o"
+    },
+    {
      "t": "line:6.word:9+0.067",
      "eyes": "wide",
      "brow": "up",
@@ -1686,6 +1855,13 @@
      "eyes": "stare",
      "brow": "down",
      "mouth": "flat"
+    },
+    {
+     "t": "line:9.word:10-0.1",
+     "eyes": "arc",
+     "brow": "on",
+     "mouth": "smile",
+     "hold": true
     }
    ],
    "clips": [
@@ -1717,6 +1893,44 @@
       "back": 5,
       "after": "hang"
      }
+    },
+    {
+     "clip": "saw_stroke",
+     "at": "line:5.word:15+0.1",
+     "params": {
+      "side": "L",
+      "count": 2,
+      "at": [
+       -0.45,
+       1.35,
+       0.4
+      ]
+     },
+     "out": 6
+    },
+    {
+     "clip": "raise_prop",
+     "at": "line:6.word:4+0.1",
+     "params": {
+      "side": "R",
+      "to": [
+       -0.95,
+       1.15,
+       0.6
+      ],
+      "prop": "torch1"
+     },
+     "hold": 2.5,
+     "out": 6
+    },
+    {
+     "clip": "lean_over",
+     "at": "line:6.word:9+0.1",
+     "params": {
+      "deg": 8
+     },
+     "hold": 0.5,
+     "out": 6
     },
     {
      "clip": "knock",
@@ -1848,7 +2062,7 @@
      "t": "line:6.start",
      "at": [
       -2.5,
-      -20.5
+      -19.3
      ],
      "ry": 10,
      "y": 0
@@ -1874,6 +2088,12 @@
      "react": false
     },
     {
+     "t": "line:2.start-0.1",
+     "eyes": "half",
+     "brow": "down",
+     "mouth": "flat"
+    },
+    {
      "t": "line:5.start-0.1",
      "eyes": "half",
      "brow": "down",
@@ -1883,7 +2103,7 @@
      "t": "line:5.word:8+0.067",
      "eyes": "open",
      "brow": "down",
-     "mouth": "flat"
+     "mouth": "o"
     },
     {
      "t": "line:6.start-0.1",
@@ -1902,6 +2122,13 @@
      "eyes": "stare",
      "brow": "down",
      "mouth": "flat"
+    },
+    {
+     "t": "line:9.word:10-0.1",
+     "eyes": "arc",
+     "brow": "on",
+     "mouth": "smile",
+     "hold": true
     }
    ],
    "clips": [
@@ -1914,7 +2141,16 @@
       "reach": 5,
       "grab": 2,
       "lift": 5,
-      "to": "chest"
+      "to": [
+       0.25,
+       0.5,
+       0.55
+      ],
+      "rot": [
+       55,
+       0,
+       0
+      ]
      }
     },
     {
@@ -1924,9 +2160,9 @@
       "side": "R",
       "count": 3,
       "at": [
-       0.55,
-       1.9,
-       0.35
+       0.1,
+       0.7,
+       0.75
       ]
      }
     },
@@ -1937,9 +2173,9 @@
       "side": "R",
       "count": 2,
       "at": [
-       0.55,
-       1.9,
-       0.35
+       0.1,
+       0.7,
+       0.75
       ]
      },
      "out": 6
@@ -1960,6 +2196,39 @@
       "back": 5,
       "after": "hang"
      }
+    },
+    {
+     "clip": "lean_over",
+     "at": "line:5.word:15+0.1",
+     "params": {
+      "deg": 8
+     },
+     "hold": 0.8,
+     "out": 6
+    },
+    {
+     "clip": "raise_prop",
+     "at": "line:6.word:4+0.1",
+     "params": {
+      "side": "R",
+      "to": [
+       -0.65,
+       1.55,
+       0.35
+      ],
+      "prop": "torch2"
+     },
+     "hold": 1.0,
+     "out": 6
+    },
+    {
+     "clip": "lean_over",
+     "at": "line:6.word:9+0.1",
+     "params": {
+      "deg": 8
+     },
+     "hold": 0.5,
+     "out": 6
     },
     {
      "clip": "knock",
@@ -2118,14 +2387,29 @@
      "eyes": "wide",
      "brow": "up",
      "mouth": "o"
+    },
+    {
+     "t": "line:7.word:18+0.12",
+     "eyes": "wince",
+     "brow": "knit",
+     "mouth": "tight"
     }
    ],
    "clips": [
     {
+     "clip": "brace",
+     "at": "line:6.word:9+0.1",
+     "params": {
+      "side": "L"
+     },
+     "hold": 0.3,
+     "out": 6
+    },
+    {
      "clip": "lean_back",
      "at": "line:6.word:9+0.1",
      "params": {
-      "deg": 5
+      "to": -5
      },
      "hold": 0.4,
      "out": 6
@@ -2189,9 +2473,9 @@
     },
     {
      "t": "line:3.word:3+0.067",
-     "eyes": "arc",
+     "eyes": "smug",
      "brow": "on",
-     "mouth": "smile",
+     "mouth": "smirk",
      "hold": true
     },
     {
@@ -2199,6 +2483,18 @@
      "eyes": "smug",
      "brow": "on",
      "mouth": "smirk"
+    },
+    {
+     "t": "line:8.word:6+0.067",
+     "eyes": "wide",
+     "brow": "up",
+     "mouth": "o",
+     "react": {
+      "kind": "jolt",
+      "deg": 5,
+      "hold": 12,
+      "back": 8
+     }
     },
     {
      "t": "line:8.word:9+0.067",
@@ -2236,6 +2532,38 @@
      }
     },
     {
+     "clip": "lean_back",
+     "at": "line:3.word:3+0.1",
+     "params": {
+      "to": -8
+     },
+     "hold": 0.8,
+     "out": 6
+    },
+    {
+     "clip": "raise_prop",
+     "at": "line:3.word:4+0.1",
+     "params": {
+      "side": "R",
+      "to": [
+       -0.55,
+       1.45,
+       0.35
+      ],
+      "prop": "cup"
+     },
+     "hold": 1.2,
+     "out": 6
+    },
+    {
+     "clip": "shake",
+     "at": "line:8.word:6+0.1",
+     "params": {
+      "side": "R",
+      "count": 4
+     }
+    },
+    {
      "clip": "stand_up",
      "at": "line:8.word:9+0.1",
      "params": {
@@ -2246,9 +2574,24 @@
      "clip": "lean_back",
      "at": "line:8.word:12+0.1",
      "params": {
-      "deg": 7
+      "to": -7
      },
      "hold": 0.4,
+     "out": 6
+    },
+    {
+     "clip": "raise_prop",
+     "at": "line:8.word:12+0.1",
+     "params": {
+      "side": "R",
+      "to": [
+       -1.05,
+       0.85,
+       0.45
+      ],
+      "prop": "cup"
+     },
+     "hold": 1.2,
      "out": 6
     },
     {
@@ -2332,6 +2675,13 @@
      "hold": true
     },
     {
+     "t": "line:3.word:5+0.067",
+     "eyes": "arc",
+     "brow": "on",
+     "mouth": "o",
+     "hold": true
+    },
+    {
      "t": "line:8.word:6+0.067",
      "eyes": "wide",
      "brow": "up",
@@ -2348,6 +2698,18 @@
      "eyes": "wince",
      "brow": "knit",
      "mouth": "tight"
+    },
+    {
+     "t": "line:9.word:4+0.067",
+     "eyes": "wide",
+     "brow": "up",
+     "mouth": "wide",
+     "react": {
+      "kind": "recoil",
+      "deg": 6,
+      "hold": 15,
+      "back": 10
+     }
     }
    ],
    "clips": [
@@ -2357,6 +2719,31 @@
      "params": {
       "height": 0.18,
       "count": 1
+     }
+    },
+    {
+     "clip": "talk_hands",
+     "at": "line:3.word:2+0.1",
+     "params": {
+      "dur": 1.2,
+      "side": "R"
+     }
+    },
+    {
+     "clip": "lean_back",
+     "at": "line:3.word:3+0.1",
+     "params": {
+      "to": -10
+     },
+     "hold": 1.0,
+     "out": 6
+    },
+    {
+     "clip": "talk_hands",
+     "at": "line:3.word:4+0.1",
+     "params": {
+      "dur": 1.4,
+      "side": "L"
      }
     },
     {
@@ -2377,10 +2764,24 @@
      "out": 6
     },
     {
+     "clip": "point",
+     "at": "line:8.word:9+0.1",
+     "params": {
+      "side": "R",
+      "dir": [
+       -0.7,
+       0.1,
+       -0.4
+      ]
+     },
+     "hold": 0.8,
+     "out": 6
+    },
+    {
      "clip": "lean_back",
      "at": "line:8.word:12+0.1",
      "params": {
-      "deg": 8
+      "to": -8
      },
      "hold": 0.4,
      "out": 6
@@ -2478,6 +2879,18 @@
      "eyes": "wince",
      "brow": "knit",
      "mouth": "tight"
+    },
+    {
+     "t": "line:9.word:4+0.067",
+     "eyes": "wide",
+     "brow": "up",
+     "mouth": "wide",
+     "react": {
+      "kind": "recoil",
+      "deg": 6,
+      "hold": 15,
+      "back": 10
+     }
     }
    ],
    "clips": [
@@ -2487,6 +2900,15 @@
      "params": {
       "height": 0.16,
       "count": 1
+     }
+    },
+    {
+     "clip": "talk_hands",
+     "at": "line:3.word:2+0.1",
+     "params": {
+      "dur": 1.2,
+      "side": "L",
+      "seed": 2
      }
     },
     {
@@ -2501,7 +2923,7 @@
      "clip": "lean_back",
      "at": "line:8.word:12+0.1",
      "params": {
-      "deg": 7
+      "to": -7
      },
      "hold": 0.4,
      "out": 6
@@ -2556,7 +2978,7 @@
  "shots": [
   {
    "t0": 0,
-   "t1": "line:1.word:8",
+   "t1": 6.22,
    "camera": {
     "move": "path",
     "keys": [
@@ -2565,17 +2987,17 @@
       "pos": {
        "object": "heroOx",
        "offset": [
-        0.1,
-        2.1,
-        11.5
+        0.65,
+        2.15,
+        15.2
        ]
       },
       "target": {
        "object": "heroOx",
        "offset": [
-        -0.25,
-        2.0,
-        1.4
+        -0.9,
+        1.95,
+        1.3
        ]
       },
       "fov": 26,
@@ -2586,9 +3008,9 @@
       "pos": {
        "object": "heroOx",
        "offset": [
-        2.6,
-        2.0,
-        13.5
+        6.5,
+        1.9,
+        11.0
        ]
       },
       "target": {
@@ -2596,41 +3018,11 @@
        "offset": [
         0,
         1.7,
-        0.5
+        0.8
        ]
       },
       "fov": 26,
       "roll": 3
-     }
-    ]
-   }
-  },
-  {
-   "t0": "line:1.word:8",
-   "t1": "line:1.word:12",
-   "camera": {
-    "move": "path",
-    "keys": [
-     {
-      "t": "line:1.word:8",
-      "pos": {
-       "object": "heroOx",
-       "offset": [
-        11.5,
-        1.9,
-        4.5
-       ]
-      },
-      "target": {
-       "object": "heroOx",
-       "offset": [
-        0,
-        1.7,
-        1.0
-       ]
-      },
-      "fov": 26,
-      "roll": -2
      },
      {
       "t": "line:1.word:12",
@@ -2651,37 +3043,35 @@
        ]
       },
       "fov": 26,
+      "roll": -2
+     },
+     {
+      "t": "line:2.start",
+      "pos": {
+       "object": "heroOx",
+       "offset": [
+        13.0,
+        2.4,
+        15.0
+       ]
+      },
+      "target": {
+       "object": "heroOx",
+       "offset": [
+        0,
+        1.5,
+        2.0
+       ]
+      },
+      "fov": 30,
       "roll": -3
      }
     ]
    }
   },
   {
-   "t0": "line:1.word:12",
-   "t1": 6.22,
-   "camera": {
-    "move": "park",
-    "fov": 30,
-    "roll": [
-     3,
-     2
-    ],
-    "lowCam": true,
-    "pos": [
-     10,
-     2.0,
-     16
-    ],
-    "target": [
-     0,
-     1.5,
-     2
-    ]
-   }
-  },
-  {
    "t0": 6.22,
-   "t1": "line:2.word:8",
+   "t1": "line:2.word:17",
    "camera": {
     "move": "path",
     "keys": [
@@ -2690,94 +3080,101 @@
       "pos": [
        400,
        26,
-       34
+       -32
       ],
       "target": [
        400,
        2,
-       2
+       10
       ],
       "fov": 40,
       "roll": -2
      },
      {
-      "t": "line:2.word:8",
+      "t": "line:2.word:4",
       "pos": [
-       400,
-       18,
-       24
+       406,
+       16,
+       -16
       ],
       "target": [
-       400,
-       3,
-       -2
+       401,
+       5,
+       -3
       ],
-      "fov": 36,
+      "fov": 32,
       "roll": -3
+     },
+     {
+      "t": "line:2.word:8",
+      "pos": [
+       412.328,
+       6.6,
+       -1.342
+      ],
+      "target": [
+       402,
+       6.85,
+       -4.5
+      ],
+      "fov": 26,
+      "roll": 3
+     },
+     {
+      "t": "line:2.word:17",
+      "pos": [
+       411.257,
+       6.6,
+       -2.363
+      ],
+      "target": [
+       402,
+       6.85,
+       -4.5
+      ],
+      "fov": 26,
+      "roll": 2
      }
     ]
-   }
-  },
-  {
-   "t0": "line:2.word:8",
-   "t1": "line:2.word:17",
-   "camera": {
-    "move": "push",
-    "fov": 26,
-    "roll": [
-     3,
-     2
-    ],
-    "lowCam": true,
-    "from": {
-     "pos": [
-      414.053,
-      6.6,
-      0.37
-     ],
-     "target": [
-      402,
-      6.85,
-      -4.5
-     ],
-     "fov": 26
-    },
-    "to": {
-     "pos": [
-      412.848,
-      6.6,
-      -0.117
-     ],
-     "target": [
-      402,
-      6.85,
-      -4.5
-     ],
-     "fov": 26
-    }
    }
   },
   {
    "t0": "line:2.word:17",
    "t1": "line:3.start",
    "camera": {
-    "move": "park",
+    "move": "push",
     "fov": 28,
     "roll": [
      -2,
      -3
     ],
     "lowCam": true,
-    "pos": [
-     410.375,
-     2.0,
-     15.633
-    ],
-    "target": [
-     399,
-     2.0,
-     3
-    ]
+    "from": {
+     "pos": [
+      396.618,
+      6.5,
+      22.901
+     ],
+     "target": [
+      398.5,
+      2.2,
+      5
+     ],
+     "fov": 28
+    },
+    "to": {
+     "pos": [
+      396.807,
+      6.5,
+      21.111
+     ],
+     "target": [
+      398.5,
+      2.2,
+      5
+     ],
+     "fov": 28
+    }
    }
   },
   {
@@ -2793,9 +3190,9 @@
     "lowCam": true,
     "from": {
      "pos": [
-      410.477,
+      410.09,
       1.7,
-      -394.291
+      -392.817
      ],
      "target": [
       398.5,
@@ -2806,9 +3203,9 @@
     },
     "to": {
      "pos": [
-      409.28,
+      408.931,
       1.7,
-      -394.612
+      -393.286
      ],
      "target": [
       398.5,
@@ -2821,294 +3218,313 @@
   },
   {
    "t0": "line:4.start",
-   "t1": 19.29,
-   "camera": {
-    "move": "push",
-    "fov": 26,
-    "roll": [
-     -3,
-     -2
-    ],
-    "lowCam": true,
-    "from": {
-     "pos": [
-      407.712,
-      6.6,
-      0.664
-     ],
-     "target": [
-      398,
-      6.85,
-      -4.5
-     ],
-     "fov": 26
-    },
-    "to": {
-     "pos": [
-      406.741,
-      6.6,
-      0.148
-     ],
-     "target": [
-      398,
-      6.85,
-      -4.5
-     ],
-     "fov": 26
-    }
-   }
-  },
-  {
-   "t0": 19.29,
-   "t1": "line:4.word:12",
-   "camera": {
-    "move": "orbit",
-    "who": "tiandan",
-    "az0": -55,
-    "az1": -38,
-    "el": -7,
-    "dist": 10.5,
-    "height": 1.7,
-    "fov": 26,
-    "roll": [
-     2,
-     3
-    ],
-    "facing": 0
-   }
-  },
-  {
-   "t0": "line:4.word:12",
-   "t1": 22.827,
-   "camera": {
-    "move": "push",
-    "fov": 26,
-    "roll": [
-     -3,
-     -2
-    ],
-    "lowCam": true,
-    "from": {
-     "pos": [
-      387.801,
-      6.6,
-      -0.379
-     ],
-     "target": [
-      398,
-      6.85,
-      -4.5
-     ],
-     "fov": 26
-    },
-    "to": {
-     "pos": [
-      388.821,
-      6.6,
-      -0.791
-     ],
-     "target": [
-      398,
-      6.85,
-      -4.5
-     ],
-     "fov": 26
-    }
-   }
-  },
-  {
-   "t0": 22.827,
-   "t1": "line:4.word:22",
-   "camera": {
-    "move": "push",
-    "fov": 26,
-    "roll": [
-     3,
-     2
-    ],
-    "lowCam": true,
-    "from": {
-     "pos": [
-      408.049,
-      6.6,
-      -0.026
-     ],
-     "target": [
-      398,
-      6.85,
-      -4.5
-     ],
-     "fov": 26
-    },
-    "to": {
-     "pos": [
-      407.044,
-      6.6,
-      -0.473
-     ],
-     "target": [
-      398,
-      6.85,
-      -4.5
-     ],
-     "fov": 26
-    }
-   }
-  },
-  {
-   "t0": "line:4.word:22",
    "t1": "line:5.start",
    "camera": {
-    "move": "orbit",
-    "who": "tiandan",
-    "az0": 48,
-    "az1": 62,
-    "el": -7,
-    "dist": 11,
-    "height": 1.7,
-    "fov": 26,
-    "roll": [
-     -2,
-     -3
-    ],
-    "facing": 0
+    "move": "path",
+    "keys": [
+     {
+      "t": "line:4.start",
+      "pos": [
+       407.712,
+       6.6,
+       0.664
+      ],
+      "target": [
+       398,
+       6.85,
+       -4.5
+      ],
+      "fov": 26,
+      "roll": -3
+     },
+     {
+      "t": "line:4.word:8",
+      "pos": [
+       396.539,
+       6.5,
+       5.898
+      ],
+      "target": [
+       398,
+       6.85,
+       -4.5
+      ],
+      "fov": 26,
+      "roll": 2
+     },
+     {
+      "t": "line:4.word:12",
+      "pos": [
+       388.265,
+       6.5,
+       -0.567
+      ],
+      "target": [
+       398,
+       6.85,
+       -4.5
+      ],
+      "fov": 26,
+      "roll": -2
+     },
+     {
+      "t": "line:4.word:18",
+      "pos": [
+       388.152,
+       6.7,
+       -2.764
+      ],
+      "target": [
+       396.8,
+       6.85,
+       -4.5
+      ],
+      "fov": 26,
+      "roll": 3
+     },
+     {
+      "t": "line:4.word:22",
+      "pos": [
+       387.578,
+       6.9,
+       -3.22
+      ],
+      "target": [
+       396.2,
+       6.85,
+       -4.5
+      ],
+      "fov": 26,
+      "roll": -3
+     },
+     {
+      "t": "line:4.word:23",
+      "pos": [
+       393.0,
+       6.8,
+       4.16
+      ],
+      "target": [
+       397.2,
+       6.85,
+       -4.5
+      ],
+      "fov": 26,
+      "roll": 2
+     },
+     {
+      "t": "line:4.word:24",
+      "pos": [
+       403.0,
+       6.8,
+       4.16
+      ],
+      "target": [
+       398,
+       6.85,
+       -4.5
+      ],
+      "fov": 26,
+      "roll": -2
+     },
+     {
+      "t": "line:5.start",
+      "pos": [
+       407.271,
+       6.9,
+       0.429
+      ],
+      "target": [
+       398,
+       6.85,
+       -4.5
+      ],
+      "fov": 26,
+      "roll": 2
+     }
+    ]
    }
   },
   {
    "t0": "line:5.start",
-   "t1": 28.077,
-   "camera": {
-    "move": "park",
-    "fov": 28,
-    "roll": [
-     2,
-     3
-    ],
-    "lowCam": true,
-    "pos": [
-     412,
-     1.8,
-     16
-    ],
-    "target": [
-     398,
-     2.0,
-     4
-    ]
-   }
-  },
-  {
-   "t0": 28.077,
-   "t1": 30.31,
-   "camera": {
-    "move": "park",
-    "fov": 28,
-    "roll": [
-     -3,
-     -2
-    ],
-    "lowCam": true,
-    "pos": [
-     398,
-     1.8,
-     15
-    ],
-    "target": [
-     404,
-     1.7,
-     8.5
-    ]
-   }
-  },
-  {
-   "t0": 30.31,
-   "t1": "line:5.word:15",
-   "camera": {
-    "move": "park",
-    "fov": 28,
-    "roll": [
-     3,
-     2
-    ],
-    "lowCam": true,
-    "pos": [
-     400,
-     2.6,
-     17
-    ],
-    "target": [
-     396,
-     1.5,
-     8
-    ]
-   }
-  },
-  {
-   "t0": "line:5.word:15",
    "t1": "line:6.start",
    "camera": {
-    "move": "park",
-    "fov": 26,
-    "roll": [
-     -2,
-     -3
-    ],
-    "lowCam": true,
-    "pos": [
-     403.933,
-     1.7,
-     18.806
-    ],
-    "target": [
-     400,
-     1.95,
-     8
+    "move": "path",
+    "keys": [
+     {
+      "t": "line:5.start",
+      "pos": [
+       398,
+       4.2,
+       19
+      ],
+      "target": [
+       400,
+       1.9,
+       6.5
+      ],
+      "fov": 28,
+      "roll": 2
+     },
+     {
+      "t": "line:5.word:5",
+      "pos": [
+       399,
+       1.8,
+       16.5
+      ],
+      "target": [
+       404,
+       1.7,
+       8.0
+      ],
+      "fov": 28,
+      "roll": -3
+     },
+     {
+      "t": "line:5.word:10",
+      "pos": [
+       398,
+       1.9,
+       16
+      ],
+      "target": [
+       404,
+       1.75,
+       8.0
+      ],
+      "fov": 28,
+      "roll": 3
+     },
+     {
+      "t": "line:5.word:11",
+      "pos": [
+       398.5,
+       1.9,
+       15.5
+      ],
+      "target": [
+       403,
+       1.7,
+       7.8
+      ],
+      "fov": 28,
+      "roll": -2
+     },
+     {
+      "t": "line:5.word:13",
+      "pos": [
+       400,
+       2.0,
+       15.5
+      ],
+      "target": [
+       395.5,
+       1.6,
+       6.5
+      ],
+      "fov": 28,
+      "roll": 2
+     },
+     {
+      "t": "line:5.word:15",
+      "pos": [
+       402,
+       1.9,
+       17
+      ],
+      "target": [
+       400,
+       2.0,
+       8
+      ],
+      "fov": 28,
+      "roll": -3
+     },
+     {
+      "t": "line:6.start",
+      "pos": [
+       402,
+       2.0,
+       17.5
+      ],
+      "target": [
+       400,
+       2.0,
+       8
+      ],
+      "fov": 28,
+      "roll": 2
+     }
     ]
    }
   },
   {
    "t0": "line:6.start",
-   "t1": 37.17,
-   "camera": {
-    "move": "park",
-    "fov": 28,
-    "roll": [
-     3,
-     2
-    ],
-    "lowCam": true,
-    "pos": [
-     -3.4,
-     1.9,
-     -5.5
-    ],
-    "target": [
-     -1.6,
-     1.3,
-     -24
-    ]
-   }
-  },
-  {
-   "t0": 37.17,
    "t1": "line:7.start",
    "camera": {
-    "move": "park",
-    "fov": 26,
-    "roll": [
-     -2,
-     -3
-    ],
-    "lowCam": true,
-    "pos": [
-     -6.0,
-     1.8,
-     -9.0
-    ],
-    "target": [
-     0.5,
-     1.2,
-     -21.5
+    "move": "path",
+    "keys": [
+     {
+      "t": "line:6.start",
+      "pos": [
+       -1.8,
+       1.9,
+       -9
+      ],
+      "target": [
+       -2.2,
+       1.5,
+       -19.8
+      ],
+      "fov": 28,
+      "roll": 3
+     },
+     {
+      "t": "line:6.word:4",
+      "pos": [
+       -2.3,
+       1.8,
+       -10
+      ],
+      "target": [
+       -2.5,
+       1.7,
+       -19.3
+      ],
+      "fov": 28,
+      "roll": -2
+     },
+     {
+      "t": "line:6.word:9",
+      "pos": [
+       -2.6,
+       1.8,
+       -10.5
+      ],
+      "target": [
+       -2.3,
+       1.5,
+       -19.6
+      ],
+      "fov": 28,
+      "roll": 2
+     },
+     {
+      "t": "line:7.start",
+      "pos": [
+       -1.5,
+       1.9,
+       -11
+      ],
+      "target": [
+       0.5,
+       1.3,
+       -20
+      ],
+      "fov": 28,
+      "roll": -3
+     }
     ]
    }
   },
@@ -3138,64 +3554,56 @@
   },
   {
    "t0": "line:7.word:8",
-   "t1": "line:7.word:13",
-   "camera": {
-    "move": "park",
-    "fov": 26,
-    "roll": [
-     -3,
-     -2
-    ],
-    "lowCam": true,
-    "pos": [
-     385,
-     6.6,
-     5.5
-    ],
-    "target": [
-     391.3,
-     6.85,
-     -4.6
-    ]
-   }
-  },
-  {
-   "t0": "line:7.word:13",
    "t1": 46.29,
    "camera": {
-    "move": "push",
-    "fov": 26,
-    "roll": [
-     2,
-     3
-    ],
-    "lowCam": true,
-    "from": {
-     "pos": [
-      398.272,
-      6.6,
-      4.168
-     ],
-     "target": [
-      391.5,
-      6.9,
-      -4.5
-     ],
-     "fov": 26
-    },
-    "to": {
-     "pos": [
-      397.595,
-      6.6,
-      3.301
-     ],
-     "target": [
-      391.5,
-      6.9,
-      -4.5
-     ],
-     "fov": 26
-    }
+    "move": "path",
+    "keys": [
+     {
+      "t": "line:7.word:8",
+      "pos": [
+       381,
+       6.8,
+       3
+      ],
+      "target": [
+       391,
+       6.85,
+       -4.5
+      ],
+      "fov": 26,
+      "roll": -3
+     },
+     {
+      "t": "line:7.word:13",
+      "pos": [
+       394.218,
+       6.6,
+       5.642
+      ],
+      "target": [
+       391.5,
+       6.9,
+       -4.5
+      ],
+      "fov": 26,
+      "roll": 2
+     },
+     {
+      "t": "line:7.word:18",
+      "pos": [
+       395.726,
+       6.6,
+       4.563
+      ],
+      "target": [
+       391.5,
+       6.9,
+       -4.5
+      ],
+      "fov": 26,
+      "roll": 3
+     }
+    ]
    }
   },
   {
@@ -3206,47 +3614,65 @@
     "keys": [
      {
       "t": "line:7.word:18",
-      "pos": [
-       -19,
-       2.2,
-       11
-      ],
-      "target": [
-       6.0,
-       1.5,
-       14
-      ],
-      "fov": 32,
+      "pos": {
+       "object": "heroOx",
+       "offset": [
+        -9,
+        2.8,
+        8
+       ]
+      },
+      "target": {
+       "object": "heroOx",
+       "offset": [
+        0,
+        1.5,
+        0.5
+       ]
+      },
+      "fov": 30,
       "roll": -3
      },
      {
       "t": "line:7.word:20",
-      "pos": [
-       -19,
-       2.2,
-       24
-      ],
-      "target": [
-       6.0,
-       1.5,
-       27
-      ],
-      "fov": 32,
+      "pos": {
+       "object": "heroOx",
+       "offset": [
+        -9.5,
+        2.9,
+        7
+       ]
+      },
+      "target": {
+       "object": "heroOx",
+       "offset": [
+        0,
+        1.5,
+        0
+       ]
+      },
+      "fov": 30,
       "roll": -3
      },
      {
       "t": "line:8.start",
-      "pos": [
-       -19,
-       2.2,
-       29
-      ],
-      "target": [
-       6.0,
-       1.5,
-       32
-      ],
-      "fov": 32,
+      "pos": {
+       "object": "heroOx",
+       "offset": [
+        -10,
+        3.0,
+        6
+       ]
+      },
+      "target": {
+       "object": "heroOx",
+       "offset": [
+        0,
+        1.5,
+        0
+       ]
+      },
+      "fov": 30,
       "roll": -2
      }
     ]
@@ -3254,141 +3680,124 @@
   },
   {
    "t0": "line:8.start",
-   "t1": 51.52,
-   "camera": {
-    "move": "push",
-    "fov": 26,
-    "roll": [
-     3,
-     2
-    ],
-    "lowCam": true,
-    "from": {
-     "pos": [
-      403.151,
-      1.6,
-      -387.881
-     ],
-     "target": [
-      397,
-      1.95,
-      -397
-     ],
-     "fov": 26
-    },
-    "to": {
-     "pos": [
-      402.536,
-      1.6,
-      -388.793
-     ],
-     "target": [
-      397,
-      1.95,
-      -397
-     ],
-     "fov": 26
-    }
-   }
-  },
-  {
-   "t0": 51.52,
-   "t1": 53.447,
-   "camera": {
-    "move": "push",
-    "fov": 26,
-    "roll": [
-     -3,
-     -2
-    ],
-    "lowCam": true,
-    "from": {
-     "pos": [
-      394.5,
-      1.6,
-      -388.474
-     ],
-     "target": [
-      400,
-      1.95,
-      -398
-     ],
-     "fov": 26
-    },
-    "to": {
-     "pos": [
-      395.05,
-      1.6,
-      -389.426
-     ],
-     "target": [
-      400,
-      1.95,
-      -398
-     ],
-     "fov": 26
-    }
-   }
-  },
-  {
-   "t0": 53.447,
    "t1": "line:9.start",
    "camera": {
-    "move": "push",
-    "fov": 28,
-    "roll": [
-     2,
-     3
-    ],
-    "lowCam": true,
-    "from": {
-     "pos": [
-      393.52,
-      1.6,
-      -388.938
-     ],
-     "target": [
-      400.6,
-      1.95,
-      -398
-     ],
-     "fov": 28
-    },
-    "to": {
-     "pos": [
-      394.228,
-      1.6,
-      -389.844
-     ],
-     "target": [
-      400.6,
-      1.95,
-      -398
-     ],
-     "fov": 28
-    }
+    "move": "path",
+    "keys": [
+     {
+      "t": "line:8.start",
+      "pos": [
+       402.592,
+       1.6,
+       -388.71
+      ],
+      "target": [
+       397,
+       1.95,
+       -397
+      ],
+      "fov": 26,
+      "roll": 3
+     },
+     {
+      "t": "line:8.word:9",
+      "pos": [
+       396.409,
+       1.6,
+       -388.133
+      ],
+      "target": [
+       400,
+       1.95,
+       -398
+      ],
+      "fov": 26,
+      "roll": -3
+     },
+     {
+      "t": "line:8.word:12",
+      "pos": [
+       393.843,
+       1.6,
+       -390.12
+      ],
+      "target": [
+       400,
+       1.95,
+       -398
+      ],
+      "fov": 26,
+      "roll": 2
+     },
+     {
+      "t": "line:9.start",
+      "pos": [
+       392.575,
+       1.7,
+       -390.575
+      ],
+      "target": [
+       400.5,
+       1.95,
+       -398
+      ],
+      "fov": 26,
+      "roll": -2
+     }
+    ]
    }
   },
   {
    "t0": "line:9.start",
    "t1": "line:9.word:6",
    "camera": {
-    "move": "park",
-    "fov": 28,
-    "roll": [
-     -2,
-     -3
-    ],
-    "lowCam": true,
-    "pos": [
-     392.523,
-     2.0,
-     -384.594
-    ],
-    "target": [
-     401.7,
-     2.2,
-     -397.7
+    "move": "path",
+    "keys": [
+     {
+      "t": "line:9.start",
+      "pos": [
+       394.676,
+       2.5,
+       -385.678
+      ],
+      "target": [
+       400.5,
+       2.7,
+       -402.5
+      ],
+      "fov": 28,
+      "roll": -2
+     },
+     {
+      "t": "line:9.word:4",
+      "pos": [
+       396.126,
+       2.3,
+       -387.884
+      ],
+      "target": [
+       400.5,
+       2.5,
+       -402.3
+      ],
+      "fov": 28,
+      "roll": 3
+     },
+     {
+      "t": "line:9.word:6",
+      "pos": [
+       397.243,
+       2.1,
+       -389.697
+      ],
+      "target": [
+       400.5,
+       2.3,
+       -402
+      ],
+      "fov": 28,
+      "roll": -2
+     }
     ]
    }
   },
@@ -3396,39 +3805,39 @@
    "t0": "line:9.word:6",
    "t1": "line:9.word:10",
    "camera": {
-    "move": "push",
-    "fov": 26,
-    "roll": [
-     3,
-     2
-    ],
-    "lowCam": true,
-    "from": {
-     "pos": [
-      406.4,
-      1.5,
-      -389.174
-     ],
-     "target": [
-      400.9,
-      1.7,
-      -398.7
-     ],
-     "fov": 26
-    },
-    "to": {
-     "pos": [
-      405.85,
-      1.5,
-      -390.126
-     ],
-     "target": [
-      400.9,
-      1.7,
-      -398.7
-     ],
-     "fov": 26
-    }
+    "move": "path",
+    "keys": [
+     {
+      "t": "line:9.word:6",
+      "pos": [
+       404.86,
+       1.6,
+       -387.577
+      ],
+      "target": [
+       400,
+       1.7,
+       -398
+      ],
+      "fov": 26,
+      "roll": 3
+     },
+     {
+      "t": "line:9.word:10",
+      "pos": [
+       406.199,
+       1.6,
+       -390.22
+      ],
+      "target": [
+       400.9,
+       1.7,
+       -398.7
+      ],
+      "fov": 26,
+      "roll": -2
+     }
+    ]
    }
   },
   {
@@ -3444,12 +3853,12 @@
     "lowCam": true,
     "from": {
      "pos": [
-      388.751,
+      388.671,
       6.6,
-      -0.026
+      1.329
      ],
      "target": [
-      398.8,
+      398,
       6.85,
       -4.5
      ],
@@ -3457,12 +3866,12 @@
     },
     "to": {
      "pos": [
-      389.756,
+      389.604,
       6.6,
-      -0.473
+      0.746
      ],
      "target": [
-      398.8,
+      398,
       6.85,
       -4.5
      ],
@@ -3481,17 +3890,17 @@
       "pos": {
        "object": "heroOx",
        "offset": [
-        3.4,
-        1.6,
-        8.0
+        -3.8,
+        1.7,
+        7.0
        ]
       },
       "target": {
        "object": "heroOx",
        "offset": [
         0,
-        1.5,
-        0.8
+        1.3,
+        0.5
        ]
       },
       "fov": 26,
@@ -3502,17 +3911,17 @@
       "pos": {
        "object": "heroOx",
        "offset": [
-        3.0,
+        -3.4,
         1.6,
-        7.2
+        6.2
        ]
       },
       "target": {
        "object": "heroOx",
        "offset": [
         0,
-        1.5,
-        0.8
+        1.3,
+        0.5
        ]
       },
       "fov": 26,
