@@ -58,6 +58,927 @@
      55.41
     ],
     "grazeFrom": 60.46
+   },
+   "post": {
+    "quality": "auto",
+    "maxBlur": 26,
+    "blend": 0.14,
+    "zones": {
+     "field": [
+      0,
+      0
+     ],
+     "city": [
+      400,
+      0
+     ],
+     "camp": [
+      400,
+      -400
+     ]
+    },
+    "states": [
+     {
+      "from": 48.74,
+      "zone": "camp",
+      "use": "attack"
+     },
+     {
+      "from": 60.46,
+      "zone": "field",
+      "use": "dawn"
+     },
+     {
+      "from": 60.46,
+      "zone": "city",
+      "use": "dawn"
+     },
+     {
+      "from": 60.46,
+      "zone": "camp",
+      "use": "dawn"
+     }
+    ],
+    "moves": [],
+    "focus": [
+     [
+      16.76,
+      25.86,
+      "tiandan"
+     ],
+     [
+      48.74,
+      57.44,
+      "jijie"
+     ]
+    ],
+    "places": {
+     "field": {
+      "air": {
+       "density": 0.0045,
+       "start": [
+        6,
+        40
+       ],
+       "far": 90,
+       "color": [
+        0.012,
+        0.018,
+        0.032
+       ],
+       "lights": 0.26,
+       "g": 0.3,
+       "noise": 0.3,
+       "noiseScale": 0.12,
+       "noiseSpeed": 0.05,
+       "keys": [
+        [
+         0,
+         0.9
+        ],
+        [
+         34.4,
+         1.1
+        ],
+        [
+         38.9,
+         1.3
+        ]
+       ]
+      },
+      "dof": {
+       "aperture": 9,
+       "nearK": 0.22,
+       "dead": 0.4
+      },
+      "bloom": {
+       "k": 0.3,
+       "thr": 1.08
+      },
+      "grade": {
+       "gamma": 1.08,
+       "contrast": 1.0,
+       "saturation": 0.98,
+       "gb": 1.08,
+       "vignette": 0.39269908169872414
+      },
+      "particles": [
+       {
+        "mode": "box",
+        "count": 900,
+        "box": [
+         60,
+         10,
+         60
+        ],
+        "vel": [
+         0.12,
+         -0.02,
+         0.05
+        ],
+        "velVar": [
+         0.08,
+         0.02,
+         0.05
+        ],
+        "sway": 0.3,
+        "swaySpeed": 0.12,
+        "size": 0.006,
+        "sizeVar": 1.5,
+        "color": [
+         0.85,
+         0.9,
+         1
+        ],
+        "alpha": 0.85,
+        "lit": 1.5,
+        "ambient": 0.016,
+        "twinkle": 0.5,
+        "nearFade": [
+         1.4,
+         3.2
+        ],
+        "farFade": 0.03
+       },
+       {
+        "mode": "box",
+        "count": 260,
+        "box": [
+         30,
+         6,
+         40
+        ],
+        "vel": [
+         0.05,
+         0.22,
+         0.1
+        ],
+        "velVar": [
+         0.1,
+         0.15,
+         0.1
+        ],
+        "sway": 0.4,
+        "swaySpeed": 0.3,
+        "size": 0.005,
+        "sizeVar": 1.8,
+        "color": [
+         1,
+         0.62,
+         0.3
+        ],
+        "alpha": 0.95,
+        "lit": 2.0,
+        "ambient": 0.02,
+        "twinkle": 0.8,
+        "nearFade": [
+         1.2,
+         3
+        ],
+        "farFade": 0.03
+       }
+      ]
+     },
+     "city": {
+      "air": {
+       "density": 0.0055,
+       "start": [
+        5,
+        30
+       ],
+       "far": 70,
+       "color": [
+        0.012,
+        0.017,
+        0.03
+       ],
+       "lights": 0.3,
+       "g": 0.3,
+       "noise": 0.3,
+       "noiseScale": 0.14,
+       "noiseSpeed": 0.05
+      },
+      "dof": {
+       "aperture": 9,
+       "nearK": 0.22,
+       "dead": 0.4
+      },
+      "bloom": {
+       "k": 0.3,
+       "thr": 1.08
+      },
+      "grade": {
+       "gamma": 1.08,
+       "contrast": 1.0,
+       "saturation": 0.98,
+       "gb": 1.08,
+       "vignette": 0.39269908169872414
+      },
+      "particles": [
+       {
+        "mode": "box",
+        "count": 750,
+        "box": [
+         50,
+         12,
+         45
+        ],
+        "vel": [
+         0.06,
+         -0.015,
+         0.03
+        ],
+        "velVar": [
+         0.05,
+         0.02,
+         0.04
+        ],
+        "sway": 0.3,
+        "swaySpeed": 0.12,
+        "size": 0.0055,
+        "sizeVar": 1.5,
+        "color": [
+         0.85,
+         0.9,
+         1
+        ],
+        "alpha": 0.8,
+        "lit": 1.4,
+        "ambient": 0.016,
+        "twinkle": 0.5,
+        "nearFade": [
+         1.4,
+         3.2
+        ],
+        "farFade": 0.03
+       },
+       {
+        "mode": "box",
+        "count": 180,
+        "box": [
+         24,
+         7,
+         24
+        ],
+        "vel": [
+         0.03,
+         0.18,
+         0.04
+        ],
+        "velVar": [
+         0.08,
+         0.12,
+         0.08
+        ],
+        "sway": 0.4,
+        "swaySpeed": 0.3,
+        "size": 0.005,
+        "sizeVar": 1.8,
+        "color": [
+         1,
+         0.66,
+         0.34
+        ],
+        "alpha": 0.9,
+        "lit": 1.9,
+        "ambient": 0.02,
+        "twinkle": 0.8,
+        "nearFade": [
+         1.2,
+         3
+        ],
+        "farFade": 0.03
+       }
+      ]
+     },
+     "camp": {
+      "air": {
+       "density": 0.008,
+       "start": [
+        5,
+        28
+       ],
+       "far": 60,
+       "color": [
+        0.02,
+        0.014,
+        0.008
+       ],
+       "lights": 0.32,
+       "g": 0.3,
+       "noise": 0.3,
+       "noiseScale": 0.14,
+       "noiseSpeed": 0.05
+      },
+      "dof": {
+       "aperture": 9,
+       "nearK": 0.22,
+       "dead": 0.4
+      },
+      "bloom": {
+       "k": 0.32,
+       "thr": 1.08
+      },
+      "grade": {
+       "gamma": 1.02,
+       "contrast": 1.05,
+       "saturation": 1.08,
+       "gr": 1.06,
+       "gb": 0.94,
+       "vignette": 0.39269908169872414
+      },
+      "particles": [
+       {
+        "mode": "box",
+        "count": 500,
+        "box": [
+         44,
+         8,
+         36
+        ],
+        "vel": [
+         0.05,
+         -0.01,
+         0.04
+        ],
+        "velVar": [
+         0.06,
+         0.02,
+         0.05
+        ],
+        "sway": 0.35,
+        "swaySpeed": 0.14,
+        "size": 0.0055,
+        "sizeVar": 1.5,
+        "color": [
+         1,
+         0.9,
+         0.72
+        ],
+        "alpha": 0.7,
+        "lit": 1.5,
+        "ambient": 0.015,
+        "twinkle": 0.6,
+        "nearFade": [
+         1.4,
+         3.2
+        ],
+        "farFade": 0.03
+       },
+       {
+        "mode": "box",
+        "count": 220,
+        "box": [
+         36,
+         6,
+         30
+        ],
+        "vel": [
+         0.04,
+         0.16,
+         0.05
+        ],
+        "velVar": [
+         0.08,
+         0.12,
+         0.08
+        ],
+        "sway": 0.45,
+        "swaySpeed": 0.35,
+        "size": 0.005,
+        "sizeVar": 1.8,
+        "color": [
+         1,
+         0.7,
+         0.38
+        ],
+        "alpha": 0.95,
+        "lit": 2.0,
+        "ambient": 0.02,
+        "twinkle": 0.85,
+        "nearFade": [
+         1.2,
+         3
+        ],
+        "farFade": 0.03
+       }
+      ]
+     },
+     "attack": {
+      "rig": "camp",
+      "air": {
+       "density": 0.009,
+       "start": [
+        4,
+        24
+       ],
+       "far": 55,
+       "color": [
+        0.04,
+        0.012,
+        0.006
+       ],
+       "lights": 0.4,
+       "g": 0.3,
+       "noise": 0.35,
+       "noiseScale": 0.14,
+       "noiseSpeed": 0.07
+      },
+      "dof": {
+       "aperture": 9,
+       "nearK": 0.22,
+       "dead": 0.4
+      },
+      "bloom": {
+       "k": 0.32,
+       "thr": 1.08
+      },
+      "grade": {
+       "gamma": 1.0,
+       "contrast": 1.08,
+       "saturation": 1.25,
+       "gr": 1.2,
+       "gb": 0.8,
+       "vignette": 0.39269908169872414
+      },
+      "particles": [
+       {
+        "mode": "box",
+        "count": 900,
+        "box": [
+         44,
+         9,
+         36
+        ],
+        "vel": [
+         0.1,
+         0.3,
+         0.12
+        ],
+        "velVar": [
+         0.15,
+         0.2,
+         0.15
+        ],
+        "sway": 0.5,
+        "swaySpeed": 0.4,
+        "size": 0.0055,
+        "sizeVar": 2.0,
+        "color": [
+         1,
+         0.58,
+         0.26
+        ],
+        "alpha": 1,
+        "lit": 2.2,
+        "ambient": 0.02,
+        "twinkle": 0.9,
+        "nearFade": [
+         1.2,
+         3
+        ],
+        "farFade": 0.03
+       },
+       {
+        "mode": "box",
+        "count": 400,
+        "box": [
+         44,
+         8,
+         36
+        ],
+        "vel": [
+         0.08,
+         -0.02,
+         0.05
+        ],
+        "velVar": [
+         0.08,
+         0.03,
+         0.06
+        ],
+        "sway": 0.3,
+        "swaySpeed": 0.12,
+        "size": 0.006,
+        "sizeVar": 1.5,
+        "color": [
+         0.95,
+         0.8,
+         0.66
+        ],
+        "alpha": 0.7,
+        "lit": 1.4,
+        "ambient": 0.015,
+        "twinkle": 0.5,
+        "nearFade": [
+         1.4,
+         3.2
+        ],
+        "farFade": 0.03
+       }
+      ]
+     },
+     "dawn": {
+      "rig": "field",
+      "air": {
+       "density": 0.002,
+       "start": [
+        8,
+        45
+       ],
+       "far": 80,
+       "color": [
+        0.07,
+        0.05,
+        0.02
+       ],
+       "lights": 0.22,
+       "g": 0.55,
+       "noise": 0.25,
+       "noiseScale": 0.12,
+       "noiseSpeed": 0.04
+      },
+      "dof": {
+       "aperture": 9,
+       "nearK": 0.22,
+       "dead": 0.4
+      },
+      "bloom": {
+       "k": 0.28,
+       "thr": 1.08
+      },
+      "grade": {
+       "gamma": 1.2,
+       "contrast": 1.02,
+       "saturation": 1.3,
+       "gr": 1.18,
+       "gb": 0.82,
+       "vignette": 0.39269908169872414
+      },
+      "particles": [
+       {
+        "mode": "box",
+        "count": 500,
+        "box": [
+         60,
+         10,
+         60
+        ],
+        "vel": [
+         0.08,
+         -0.01,
+         0.04
+        ],
+        "velVar": [
+         0.06,
+         0.02,
+         0.05
+        ],
+        "sway": 0.3,
+        "swaySpeed": 0.12,
+        "size": 0.006,
+        "sizeVar": 1.5,
+        "color": [
+         1,
+         0.92,
+         0.76
+        ],
+        "alpha": 0.8,
+        "lit": 1.6,
+        "ambient": 0.02,
+        "twinkle": 0.5,
+        "nearFade": [
+         1.4,
+         3.2
+        ],
+        "farFade": 0.03
+       }
+      ]
+     }
+    },
+    "shade": {
+     "zones": {
+      "field": [
+       0,
+       0
+      ],
+      "city": [
+       400,
+       0
+      ],
+      "camp": [
+       400,
+       -400
+      ]
+     },
+     "states": [
+      {
+       "from": 48.74,
+       "zone": "camp",
+       "use": "attack"
+      },
+      {
+       "from": 60.46,
+       "zone": "field",
+       "use": "dawn"
+      },
+      {
+       "from": 60.46,
+       "zone": "city",
+       "use": "dawn"
+      },
+      {
+       "from": 60.46,
+       "zone": "camp",
+       "use": "dawn"
+      }
+     ],
+     "steps": [
+      48.74,
+      60.46
+     ],
+     "places": {
+      "field": {
+       "exposure": 0.95,
+       "sat": 0.95,
+       "keyTint": [
+        0.92,
+        0.98,
+        1.1
+       ],
+       "hard": 0.55,
+       "front": 0.1,
+       "rim": 0.6,
+       "rimFill": 0.8,
+       "low": 0.44,
+       "chest": 0.38,
+       "floor": [
+        0.3,
+        0.36,
+        0.48
+       ],
+       "keyMin": [
+        0.62,
+        0.68,
+        0.82
+       ],
+       "aerial": {
+        "color": [
+         0.05,
+         0.07,
+         0.12
+        ],
+        "density": 0.01,
+        "max": 0.22
+       },
+       "metal": {
+        "spec": 1.1,
+        "env": 0.3,
+        "sky": [
+         0.5,
+         0.6,
+         0.8
+        ],
+        "ground": [
+         0.04,
+         0.05,
+         0.07
+        ]
+       }
+      },
+      "city": {
+       "exposure": 0.95,
+       "sat": 0.95,
+       "keyTint": [
+        0.94,
+        0.98,
+        1.08
+       ],
+       "hard": 0.55,
+       "front": 0.1,
+       "rim": 0.55,
+       "rimFill": 0.8,
+       "low": 0.44,
+       "chest": 0.38,
+       "floor": [
+        0.32,
+        0.36,
+        0.46
+       ],
+       "keyMin": [
+        0.64,
+        0.68,
+        0.8
+       ],
+       "aerial": {
+        "color": [
+         0.05,
+         0.07,
+         0.11
+        ],
+        "density": 0.01,
+        "max": 0.22
+       },
+       "metal": {
+        "spec": 1.1,
+        "env": 0.3,
+        "sky": [
+         0.5,
+         0.6,
+         0.8
+        ],
+        "ground": [
+         0.04,
+         0.05,
+         0.07
+        ]
+       }
+      },
+      "camp": {
+       "exposure": 1,
+       "sat": 1,
+       "keyTint": [
+        1.05,
+        0.94,
+        0.8
+       ],
+       "hard": 0.5,
+       "front": 0.12,
+       "rim": 0.6,
+       "rimFill": 0.9,
+       "low": 0.46,
+       "chest": 0.4,
+       "floor": [
+        0.45,
+        0.36,
+        0.26
+       ],
+       "keyMin": [
+        0.85,
+        0.72,
+        0.52
+       ],
+       "aerial": {
+        "color": [
+         0.1,
+         0.07,
+         0.04
+        ],
+        "density": 0.01,
+        "max": 0.22
+       },
+       "metal": {
+        "spec": 1.2,
+        "env": 0.35,
+        "sky": [
+         0.8,
+         0.62,
+         0.4
+        ],
+        "ground": [
+         0.06,
+         0.04,
+         0.03
+        ]
+       }
+      },
+      "attack": {
+       "exposure": 1,
+       "sat": 1.02,
+       "keyTint": [
+        1.08,
+        0.8,
+        0.6
+       ],
+       "hard": 0.7,
+       "front": 0.12,
+       "rim": 0.9,
+       "rimFill": 1.2,
+       "low": 0.42,
+       "chest": 0.44,
+       "floor": [
+        0.4,
+        0.3,
+        0.24
+       ],
+       "keyMin": [
+        0.9,
+        0.62,
+        0.42
+       ],
+       "aerial": {
+        "color": [
+         0.12,
+         0.05,
+         0.03
+        ],
+        "density": 0.012,
+        "max": 0.25
+       },
+       "metal": {
+        "spec": 1.3,
+        "env": 0.4,
+        "sky": [
+         0.9,
+         0.5,
+         0.3
+        ],
+        "ground": [
+         0.07,
+         0.03,
+         0.02
+        ]
+       }
+      },
+      "dawn": {
+       "exposure": 1.05,
+       "sat": 1,
+       "keyTint": [
+        1.04,
+        0.96,
+        0.86
+       ],
+       "hard": 0.3,
+       "front": 0.14,
+       "rim": 1.1,
+       "rimFill": 0.5,
+       "low": 0.68,
+       "chest": 0.2,
+       "floor": [
+        0.88,
+        0.74,
+        0.62
+       ],
+       "keyMin": [
+        0.98,
+        0.86,
+        0.7
+       ],
+       "aerial": {
+        "color": [
+         0.5,
+         0.38,
+         0.24
+        ],
+        "density": 0.008,
+        "max": 0.2
+       },
+       "metal": {
+        "spec": 1.4,
+        "env": 0.5,
+        "sky": [
+         1,
+         0.78,
+         0.5
+        ],
+        "ground": [
+         0.2,
+         0.14,
+         0.08
+        ]
+       }
+      }
+     },
+     "moods": [
+      {
+       "t0": 0,
+       "t1": 2.3,
+       "in": 0,
+       "out": 0.3,
+       "place": "field",
+       "hard": 0.7,
+       "exposure": 1.05
+      },
+      {
+       "t0": 23.5,
+       "t1": 25.86,
+       "in": 0.4,
+       "out": 0.1,
+       "place": "city",
+       "exposure": 1.15,
+       "who": {
+        "tiandan": 1.12
+       }
+      },
+      {
+       "t0": 38.9,
+       "t1": 47.86,
+       "in": 0.3,
+       "out": 0.3,
+       "place": "field",
+       "rim": 1.0,
+       "exposure": 1.05
+      },
+      {
+       "t0": 60.46,
+       "t1": 63.69,
+       "in": 0.8,
+       "out": 0,
+       "place": "field",
+       "exposure": 1.08
+      }
+     ]
+    }
    }
   }
  },
@@ -2172,50 +3093,22 @@
    "t0": 37.17,
    "t1": "line:7.start",
    "camera": {
-    "move": "path",
-    "keys": [
-     {
-      "t": "line:6.word:9",
-      "pos": {
-       "object": "heroOx",
-       "offset": [
-        -4.2,
-        1.6,
-        -5.5
-       ]
-      },
-      "target": {
-       "object": "heroOx",
-       "offset": [
-        0,
-        1.2,
-        -1.2
-       ]
-      },
-      "fov": 26,
-      "roll": -2
-     },
-     {
-      "t": "line:7.start",
-      "pos": {
-       "object": "heroOx",
-       "offset": [
-        -4.8,
-        1.6,
-        -3.5
-       ]
-      },
-      "target": {
-       "object": "heroOx",
-       "offset": [
-        0,
-        1.3,
-        -0.8
-       ]
-      },
-      "fov": 26,
-      "roll": -3
-     }
+    "move": "park",
+    "fov": 26,
+    "roll": [
+     -2,
+     -3
+    ],
+    "lowCam": true,
+    "pos": [
+     -6.0,
+     1.8,
+     -9.0
+    ],
+    "target": [
+     0.5,
+     1.2,
+     -21.5
     ]
    }
   },

@@ -23,6 +23,7 @@ import { createLightRig } from '../../world/look/lights.js';
 import { createPost } from '../../world/look/post.js';
 import { createRigShade } from '../../world/look/rigshade.js';
 import { createKit } from '../../world/look/rigkit.js';
+import { readGlb } from '../../world/look/glb.js';
 import { basic, flat, part } from '../../engine/props/_kit.js';
 
 // place origins (world)
@@ -383,16 +384,49 @@ export async function buildSet(THREE, scene, opts, kit) {
   const campSlot = i => ({ x: (R1(i, 221) - .5) * 7, delay: R1(i, 222) * .7 });
 
   // real ox builder, when it lands: swap each fallback child for the real ox (wrapper + name stay)
+  // + Environment pass: Blender detail layer (assets/set/fire_set.glb, world coords baked in).
+  // Previz stays the fallback: if the GLB is missing the film renders exactly as before.
+  const EMIT = new Set(['ember', 'win_lit', 'lantern_glow']);
+  const FINISH = { stone_mid: { grime: .5, bump: .05 }, stone_dark: { grime: .55, bump: .05 }, stone_light: { grime: .45, bump: .04 },
+    dark_inset: { grime: .2 }, wood_dark: { grime: .4 }, wood_mid: { grime: .4 }, wood_light: { grime: .35 },
+    iron: { gloss: 30, spec: .4, grime: .3 }, brass: { gloss: 40, spec: .5, grime: .25 },
+    canvas_tent: { grime: .45 }, canvas_tent2: { grime: .5 }, roof_tile: { grime: .4 }, thatch: { grime: .4 },
+    earth: { grime: .5 }, grass: { grime: .3 }, leaf: { grime: .3 }, banner_red: { grime: .35 }, rope: { grime: .4 } };
+  const hexOf = c => '#' + c.map(v => Math.round(Math.min(1, v) * 255).toString(16).padStart(2, '0')).join('');
+  const placeOf = (x, z) => x < 200 ? 'field' : (z < -200 ? 'camp' : 'city');
   const ready = (async () => {
+    const out = {};
     try {
       const mod = await import('./props/ox.js');
       const build = mod.build || mod.buildOx || mod.default;
-      if (typeof build !== 'function') return { ox: 'fallback (no build export)' };
-      for (const rec of oxen) { const real = build(THREE, { seed: rec.seed }); if (!real) continue;
-        rec.wrap.remove(rec.inner); rec.wrap.add(real); rec.inner = real;
-        rec.upd = real.userData?.update || mod.update || rec.upd; }
-      return { ox: 'props/ox.js' };
-    } catch { return { ox: 'fallback (props/ox.js missing)' }; }
+      if (typeof build === 'function') {
+        for (const rec of oxen) { const real = build(THREE, { seed: rec.seed }); if (!real) continue;
+          rec.wrap.remove(rec.inner); rec.wrap.add(real); rec.inner = real;
+          rec.upd = real.userData?.update || mod.update || rec.upd; }
+        out.ox = 'props/ox.js';
+      } else out.ox = 'fallback (no build export)';
+    } catch { out.ox = 'fallback (props/ox.js missing)'; }
+    try {
+      const glb = await readGlb(THREE, new URL('./assets/set/fire_set.glb', import.meta.url).href);
+      if (glb) {
+        const mats = {};
+        const G = new THREE.Group(); G.name = 'glb.fire_set'; base.group.add(G);
+        let n = 0;
+        for (const root of glb.roots) for (const p of root.prims) {
+          const key = (p.material || root.name).split('.')[0];
+          const hex = hexOf(p.color || [0.5, 0.5, 0.5]);
+          const mesh = new THREE.Mesh(p.geometry);
+          mesh.applyMatrix4(root.matrix);
+          mesh.geometry.computeBoundingBox();
+          const c = mesh.geometry.boundingBox.getCenter(new THREE.Vector3());
+          const place = placeOf(c.x, c.z), mk = place + ':' + key;
+          mesh.material = mats[mk] || (mats[mk] = EMIT.has(key) ? basic(hex) : rkit.surface(place, hex, FINISH[key] || { grime: .4 }));
+          mesh.frustumCulled = false; G.add(mesh); n++;
+        }
+        out.glb = `fire_set.glb (${n} meshes)`;
+      } else out.glb = 'previz fallback (no GLB)';
+    } catch (e) { out.glb = 'previz fallback (' + String(e).slice(0, 80) + ')'; }
+    return out;
   })();
 
   // ---- marks (world [x,z]) + points (camera targets)
