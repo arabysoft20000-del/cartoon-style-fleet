@@ -43,7 +43,8 @@ const SUB = {
     { size: [30, 0.06, 0.06], at: [0, 0.6, 1.72], color: '#5a6a76' },             // hull panel line
     { size: [30, 0.06, 0.06], at: [0, -0.1, 1.72], color: '#54626e' },            // hull panel line
     { size: [14, 3, 3], at: [-3, -0.6, -30], color: '#22384c' },                  // distant ship on the horizon (far end, in frame behind the sailor)
-    { size: [0.9, 0.9, 0.9], at: [-3, 2.6, -30], color: '#ffd98a' },              // its lamp
+    { size: [1.4, 1.4, 1.4], at: [-3, 2.6, -30], color: '#ffd98a' },              // its lamp (big, middle band)
+    { size: [0.9, 0.5, 0.9], at: [1.5, 2.3, 1.9], color: '#8a7a5c' },             // coiled rope on deck, near foreground
     { size: [1.1, 1.1, 1.1], at: [0.6, 2.41, -1.5], color: '#ffd25e' },           // big glowing head on the deck lamp (behind the sailor)
     { size: [1.1, 1.1, 1.1], at: [7.5, 2.01, 1.0], color: '#ffd25e' },            // big glowing head on the far-end lamp
   ],
@@ -54,7 +55,7 @@ const LONDON = {
   sun: { dir: [-0.5, 0.6, 0.5], warm: '#ffe2b0', cool: '#8a7a66' },
   ground: [ { kind: 'floor', color: '#6e5638', x: [-12, 12], z: [-30, 8], tile: 3 } ],
   walls: [
-    { x: 0, z: -25, w: 18, h: 6.5, th: 0.6, color: '#8a7452', door: { x: 3.5, h: 3.3, color: '#4a3a28' }, windows: [ { x: -3.5, y: 1.2, w: 3.4, h: 2.6 } ] },
+    { x: 0, z: -25, w: 18, h: 6.5, th: 0.6, color: '#8a7452', door: { x: 3.5, h: 3.3, color: '#4a3a28' }, windows: [ { x: -3.5, y: 1.2, w: 5, h: 3.4 } ] },
     { x: -8, z: -12, w: 34, h: 6.5, th: 0.6, ry: 90, color: '#7d684a' },
     { x: 8, z: -12, w: 34, h: 6.5, th: 0.6, ry: -90, color: '#7d684a' },
   ],
@@ -72,9 +73,11 @@ const LONDON = {
     { size: [0.06, 0.05, 2.2], at: [-7.52, 4.2, -13.0], color: '#2e6ec8' },         // string line
     { size: [0.25, 1.1, 2.2], at: [-7.5, 2.2, -15.5], color: '#a8433a' },          // red arrow block (the lie)
     { size: [0.25, 1.1, 2.2], at: [-7.5, 2.2, -12.5], color: '#3a6e8a' },           // blue arrow block (the truth)
-    { size: [4.5, 3.6, 0.4], at: [3.5, 0, -28.5], color: '#f5e6b8' },             // lit corridor beyond the far door
-    { size: [2.2, 3.2, 0.2], at: [3.5, 0, -25.6], color: '#ffeec0' },             // the glowing doorway itself
+    { size: [5.5, 4.2, 0.4], at: [3.5, 0, -28.5], color: '#f5e6b8' },             // lit corridor beyond the far door
+    { size: [3.2, 3.4, 0.2], at: [3.5, 0, -25.6], color: '#ffeec0' },             // the glowing doorway itself (big, middle band)
     { size: [1.4, 1.8, 0.5], at: [5.6, 0, -3.6], color: '#5a4630' },              // filing cabinet
+    { size: [1, 4.5, 3], at: [-6.5, 0, 3], color: '#5a4630' },                    // bookshelf, near foreground left edge
+    { size: [1, 4.5, 3], at: [6.8, 0, 2], color: '#5a4630' },                     // bookshelf, near foreground right edge
     { size: [17, 0.3, 34], at: [0, 6.2, -12], color: '#9a8464' },                 // ceiling slab over the deep room
     { size: [3.0, 0.15, 1.4], at: [0, 4.6, -6], color: '#ffe9b0' },               // ceiling light panel (visible source)
     { size: [1.1, 1.1, 1.1], at: [-2.2, 1.41, -0.8], color: '#ffd98a' },          // big glowing head on the desk lamp
@@ -90,7 +93,7 @@ const BERLIN = {
   sun: { dir: [-0.3, 0.7, 0.4], warm: '#d8dcc8', cool: '#5a6658' },
   ground: [ { kind: 'floor', color: '#565a50', x: [-13, 13], z: [-30, 8], tile: 3 } ],
   walls: [
-    { x: 0, z: -25, w: 20, h: 6.5, th: 0.6, color: '#6a6e60', door: { x: 4.5, h: 3.3, color: '#3a3e34' }, windows: [ { x: 6.5, y: 1.4, w: 3.6, h: 2.6 } ] },
+    { x: 0, z: -25, w: 20, h: 6.5, th: 0.6, color: '#6a6e60', door: { x: 4.5, h: 3.3, color: '#3a3e34' }, windows: [ { x: 6.5, y: 1.4, w: 5.2, h: 3.4 } ] },
     { x: -9, z: -12, w: 34, h: 6.5, th: 0.6, ry: 90, color: '#606457' },
     { x: 9, z: -12, w: 34, h: 6.5, th: 0.6, ry: -90, color: '#606457' },
   ],
@@ -109,8 +112,10 @@ const BERLIN = {
     { size: [0.25, 1.2, 2.6], at: [-8.5, 2.4, -17], color: '#a8433a' },          // arrows to Greece
     { size: [0.25, 1.2, 2.6], at: [-8.5, 2.4, -13.5], color: '#a8433a' },          // arrows to Sardinia
     { size: [1.6, 1.6, 0.5], at: [5.8, 0, -3.4], color: '#4c5044' },              // cabinet
-    { size: [4.5, 3.6, 0.4], at: [4.5, 0, -28.5], color: '#e8ecd0' },               // lit corridor beyond the far door
-    { size: [2.2, 3.2, 0.2], at: [4.5, 0, -25.6], color: '#f2f4d8' },               // the glowing doorway itself
+    { size: [5.5, 4.2, 0.4], at: [4.5, 0, -28.5], color: '#e8ecd0' },               // lit corridor beyond the far door
+    { size: [3.2, 3.4, 0.2], at: [4.5, 0, -25.6], color: '#f2f4d8' },               // the glowing doorway itself (big, middle band)
+    { size: [1, 4.5, 3], at: [-7.5, 0, 3], color: '#4c5044' },                     // cabinet, near foreground left edge
+    { size: [1, 4.5, 3], at: [7.8, 0, 2], color: '#4c5044' },                      // cabinet, near foreground right edge
     { size: [19, 0.3, 34], at: [0, 6.2, -12], color: '#8a8e80' },                  // ceiling slab over the deep room
     { size: [3.0, 0.15, 1.4], at: [0, 4.6, -6], color: '#eef0c8' },               // ceiling light panel (visible source)
     { size: [1.2, 1.2, 1.2], at: [5.2, 2.56, -2.5], color: '#eef0c8' },           // big glowing head on the overhead lamp
@@ -130,12 +135,12 @@ const SICILY = {
     { size: [7, 2.6, 3.2], at: [-16, -0.2, -22], color: '#5c6650' },              // landing craft (far in the shallows, depth cue not a wall)
     { size: [5.5, 0.3, 2.2], at: [-16, 0.1, -19.8], color: '#4c5544' },             // its ramp
     { size: [7, 2.6, 3.2], at: [14, -0.2, -20], color: '#66725c' },               // a second craft far off (depth cue)
-    { size: [1.1, 1.1, 1.1], at: [-3.5, 2.01, 0.5], color: '#ffd98a' },           // big glowing head on the boat lamp
-    { size: [1.6, 0.9, 1.0], at: [3.4, 0, 1.8], color: '#7a6a48' },               // crates ashore
-    { size: [1.2, 0.7, 0.8], at: [4.6, 0, 2.2], color: '#6a5c3e' },
+    { size: [1.1, 1.1, 1.1], at: [-2.2, 2.01, 0.8], color: '#ffd98a' },           // big glowing head on the boat lamp (near the soldiers' path)
+    { size: [1.6, 0.9, 1.0], at: [2.5, 0, 4], color: '#7a6a48' },               // crates ashore (near foreground right edge)
+    { size: [1.2, 0.7, 0.8], at: [3.7, 0, 4.4], color: '#6a5c3e' },
     { size: [26, 4.5, 3], at: [4, 0, 24], color: '#b49a6a' },                     // dunes / hills far side
   ],
-  lamps: [ { x: -3.5, z: 0.5, h: 3.0, glow: '#ffd98a', color: '#3a3a34' } ],                                         // boat lamp (beside the soldiers' path)
+  lamps: [ { x: -2.2, z: 0.8, h: 3.0, glow: '#ffd98a', color: '#3a3a34' } ],                                         // boat lamp (beside the soldiers' path)
   trees: [ { x: 10, z: 6, h: 8 }, { x: -11, z: 5, h: 7 } ],
 };
 const CEMETERY = {
