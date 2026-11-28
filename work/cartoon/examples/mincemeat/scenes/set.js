@@ -6,7 +6,7 @@ const SHORE = {
   ground: [ { kind: 'sand', color: '#c9b183', x: [-40, 40], z: [-6, 12], tile: 4 }, { color: '#b49a6e', z: [-8, -5.5], y: -0.15 } ],
   water: { z0: -8, z1: -160, y: -0.5, color: '#4d7d99' },
   boxes: [
-    { size: [2.4, 0.55, 1.0], at: [-0.6, 0, 1.8], color: '#7a6a52' },             // the covered shape (blanket over it, never a body) — in shot 1
+    { size: [2.4, 0.55, 1.0], at: [0.8, 0, 0.6], color: '#7a6a52' },              // the covered shape (blanket over it, never a body) — beside the fisherman in shot 1
     { size: [3.2, 0.5, 1.2], at: [-6, 0, -2], color: '#6e4f33' },                // beached rowboat hull
     { size: [0.5, 0.5, 0.5], at: [-2.2, 0, 1.2], color: '#8a6a3a' },              // crate
     { size: [0.45, 0.45, 0.45], at: [-2.2, 0.5, 1.2], color: '#7a5c30' },         // crate on crate

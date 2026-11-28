@@ -39,6 +39,39 @@ modelled hero pieces wait for a second day or a topped-up account.
 - The covered shape (shore, sub stretcher) is a set box under a blanket colour — never
   modelled as a body, in any track.
 
+## GENERATION REQUEST (browser lead — start now, parallel to Build/Camera)
+
+Accounts (both signed in, 0 credits, 5 free/day each): pal59@catgroup.uk (browser-task:ac997909)
+and setmsfax@catgroup.uk (browser-task:16a83950). Generate in the order below, 5 per account.
+FIRST = briefcase on one account; after it is imported and decimated, STOP for Jole's
+first-asset approval (guard check 6) before importing more. Download each .glb to
+assets/set/raw/<piece>.glb. Prompts drafted by the coordinator from .suite/qwen_hy3d_packet.md
+(the team can describe the pieces; Qwen4-Max verification optional, snippets only).
+Shared style in every prompt: "thick dark ink outlines, flat bold colours, clean cartoon
+surfaces, chunky stylised proportions, not photorealistic, single object, no people, no text
+or letters, neutral pose, full object visible, plain background."
+Negative (every piece): "photorealistic, fine texture noise, people, text, letters, watermark, multiple objects"
+
+1. briefcase — "A 1940s British officer's locked leather briefcase, worn brown leather, brass
+   locks and corner protectors, a short steel chain attached to the handle, closed, three-quarter view."
+2. london_map_board — "A large wooden-framed war-room map board on a wooden stand, blank pale
+   map surface with a few coloured pins and string lines, no text."
+3. submarine_deck — "The conning tower and forward deck section of a 1940s British submarine,
+   dark steel hull, small deck lamp, railing, periscope mast, seen from the side-front."
+4. berlin_map_board — "A very large wall-mounted map board in a wooden frame, blank grey-green
+   map surface with red arrow markers, no text."
+5. landing_craft — "A WWII LCVP landing craft with its bow ramp lowered, grey-green steel,
+   boxy hull, beached on sand, seen from front-side."
+6. fishing_boat — "A small wooden Spanish fishing rowboat beached on sand, worn planks, oars
+   resting inside, seen from the side."
+7. lighthouse — "A Spanish coastal lighthouse, white tower with red bands, small lamp room with
+   glass top, rocky base."
+8. gravestone — "A simple upright cemetery headstone, weathered grey stone, blank smooth face,
+   slight rounded top, standing on a small base."
+9. cypress — "A tall dark Mediterranean cypress tree, narrow column shape, dense dark green foliage."
+10. office_desk — "A 1940s British office desk with drawers, dark wood, a green-shaded desk lamp
+    and neat stacks of paper on top, seen from front-side."
+
 ## Crew organization (Jole, 2026-11-28 08:17 EET — applied exactly)
 
 Crew split BY PLACE, not by tool. Each of the six places (shore, sub, london, berlin,
