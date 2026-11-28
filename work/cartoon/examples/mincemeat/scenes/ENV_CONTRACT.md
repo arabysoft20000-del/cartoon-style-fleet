@@ -39,38 +39,41 @@ modelled hero pieces wait for a second day or a topped-up account.
 - The covered shape (shore, sub stretcher) is a set box under a blanket colour — never
   modelled as a body, in any track.
 
-## GENERATION REQUEST (browser lead — start now, parallel to Build/Camera)
+## GENERATION REQUEST (browser lead — IMAGE-TO-3D route, Jole 09:07 EET)
 
+Jole's order: «hy3d ابقي اعملي صور عندك وهو يحولها للمجسمات افضل من text» — make the pictures
+at our end, HY3D converts them to models; better than text. So: reference IMAGES are generated
+here (image generation, film's ink-outline look), then HY3D **image-to-3D** on those images.
+The text-to-3D prompts below are superseded (kept only as the picture descriptions).
+
+Reference images: assets/set/ref/<piece>.webp — ALL 10 GENERATED AND ON DISK (09:12 EET):
+briefcase.webp, london_map_board.webp, submarine_deck.webp, berlin_map_board.webp,
+landing_craft.webp, fishing_boat.webp, lighthouse.webp, gravestone.webp, cypress.webp,
+office_desk.webp. Browser lead: upload each to HY3D image-to-3D in the order below, briefcase
+first; download each .glb to assets/set/raw/<piece>.glb. (Qwen4-Max may refine a description
+if a picture is off — snippets only.)
 Accounts (both signed in, 0 credits, 5 free/day each): pal59@catgroup.uk (browser-task:ac997909)
 and setmsfax@catgroup.uk (browser-task:16a83950). Generate in the order below, 5 per account.
-FIRST = briefcase on one account; after it is imported and decimated, STOP for Jole's
-first-asset approval (guard check 6) before importing more. Download each .glb to
-assets/set/raw/<piece>.glb. Prompts drafted by the coordinator from .suite/qwen_hy3d_packet.md
-(the team can describe the pieces; Qwen4-Max verification optional, snippets only).
-Shared style in every prompt: "thick dark ink outlines, flat bold colours, clean cartoon
-surfaces, chunky stylised proportions, not photorealistic, single object, no people, no text
-or letters, neutral pose, full object visible, plain background."
-Negative (every piece): "photorealistic, fine texture noise, people, text, letters, watermark, multiple objects"
+FIRST = briefcase (assets/set/ref/media-generation-briefcase-0-*.webp) on one account; after it
+is imported and decimated to 76,000 faces, STOP for Jole's first-asset approval (guard check 6)
+before importing more. Download each .glb to assets/set/raw/<piece>.glb.
 
-1. briefcase — "A 1940s British officer's locked leather briefcase, worn brown leather, brass
-   locks and corner protectors, a short steel chain attached to the handle, closed, three-quarter view."
-2. london_map_board — "A large wooden-framed war-room map board on a wooden stand, blank pale
-   map surface with a few coloured pins and string lines, no text."
-3. submarine_deck — "The conning tower and forward deck section of a 1940s British submarine,
-   dark steel hull, small deck lamp, railing, periscope mast, seen from the side-front."
-4. berlin_map_board — "A very large wall-mounted map board in a wooden frame, blank grey-green
-   map surface with red arrow markers, no text."
-5. landing_craft — "A WWII LCVP landing craft with its bow ramp lowered, grey-green steel,
-   boxy hull, beached on sand, seen from front-side."
-6. fishing_boat — "A small wooden Spanish fishing rowboat beached on sand, worn planks, oars
-   resting inside, seen from the side."
-7. lighthouse — "A Spanish coastal lighthouse, white tower with red bands, small lamp room with
-   glass top, rocky base."
-8. gravestone — "A simple upright cemetery headstone, weathered grey stone, blank smooth face,
-   slight rounded top, standing on a small base."
-9. cypress — "A tall dark Mediterranean cypress tree, narrow column shape, dense dark green foliage."
-10. office_desk — "A 1940s British office desk with drawers, dark wood, a green-shaded desk lamp
-    and neat stacks of paper on top, seen from front-side."
+Picture descriptions (what each reference image shows):
+1. briefcase — 1940s British officer's locked leather briefcase, worn brown leather, brass
+   locks and corner protectors, short steel chain on the handle, closed, three-quarter view.
+2. london_map_board — large wooden-framed war-room map board on a stand, blank pale map
+   surface, a few coloured pins and string, no text.
+3. submarine_deck — conning tower + forward deck of a 1940s British submarine, dark steel,
+   deck lamp, railing, periscope mast, side-front view.
+4. berlin_map_board — very large wall map board, wooden frame, blank grey-green surface,
+   red arrow markers, no text.
+5. landing_craft — WWII LCVP landing craft, bow ramp lowered, grey-green steel, beached on sand.
+6. fishing_boat — small wooden Spanish fishing rowboat beached on sand, oars inside.
+7. lighthouse — Spanish coastal lighthouse, white with red bands, lamp room on top.
+8. gravestone — simple upright headstone, weathered grey stone, blank face.
+9. cypress — tall dark Mediterranean cypress tree, column shape.
+10. office_desk — 1940s British office desk with drawers, dark wood, green-shaded desk lamp,
+    paper stacks on top.
 
 ## Crew organization (Jole, 2026-11-28 08:17 EET — applied exactly)
 

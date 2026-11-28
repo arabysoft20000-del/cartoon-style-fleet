@@ -7,11 +7,15 @@ const SHORE = {
   water: { z0: -8, z1: -160, y: -0.5, color: '#4d7d99' },
   boxes: [
     { size: [2.4, 0.55, 1.0], at: [1.5, 0, 0.4], color: '#7a6a52' },              // the covered shape (blanket over it, never a body) — revealed in shot 2, clear of shot 1's tight frame
-    { size: [3.2, 0.5, 1.2], at: [-6, 0, -2], color: '#6e4f33' },                // beached rowboat hull
+    { size: [3.2, 0.5, 1.2], at: [-7, 0, -9], color: '#6e4f33' },                 // beached rowboat hull (behind the fence, breaks the sea band)
     { size: [0.5, 0.5, 0.5], at: [-2.2, 0, 1.2], color: '#8a6a3a' },              // crate
     { size: [0.45, 0.45, 0.45], at: [-2.2, 0.5, 1.2], color: '#7a5c30' },         // crate on crate
     { size: [1.2, 5.5, 1.2], at: [-10, 0, -12], color: '#d8d2c4' },               // lighthouse tower (far end of shot 1, left)
     { size: [1.5, 0.8, 1.5], at: [-10, 5.5, -12], color: '#ffe9a8' },             // lighthouse lamp room
+    { size: [34, 0.08, 0.5], at: [0, -0.42, -16], color: '#6a9ab5' },             // wave line (sea recession)
+    { size: [38, 0.08, 0.5], at: [2, -0.42, -28], color: '#6390ab' },             // wave line
+    { size: [44, 0.08, 0.6], at: [-2, -0.42, -45], color: '#5c86a0' },            // wave line
+    { size: [16, 2.2, 3], at: [17, 0, -38], color: '#5e7268' },                   // distant headland (far end, right)
   ],
   lamps: [ { x: -2.8, z: 0.6, h: 1.6 } ],                                         // fisherman's lantern post (visible practical in shot 1)
   trees: [ { x: 9, z: -4, h: 7 } ],
@@ -29,20 +33,38 @@ const SUB = {
     { size: [0.3, 2.2, 0.3], at: [-3.6, 4.9, 0], color: '#39444e' },              // periscope mast
     { size: [2.4, 0.4, 0.9], at: [2.9, 2.3, 0.4], color: '#6a5c44' },             // covered stretcher on deck (clear of the sailor's feet)
     { size: [0.8, 0.8, 0.8], at: [4.5, 2.3, -0.6], color: '#55626e' },            // deck gear
+    { size: [17, 0.08, 0.08], at: [0, 3.05, 1.2], color: '#5a6a76' },             // deck rail (top bar)
+    { size: [0.08, 0.8, 0.08], at: [-8, 2.3, 1.2], color: '#5a6a76' }, { size: [0.08, 0.8, 0.08], at: [-6, 2.3, 1.2], color: '#5a6a76' },
+    { size: [0.08, 0.8, 0.08], at: [-4, 2.3, 1.2], color: '#5a6a76' }, { size: [0.08, 0.8, 0.08], at: [-2, 2.3, 1.2], color: '#5a6a76' },
+    { size: [0.08, 0.8, 0.08], at: [0, 2.3, 1.2], color: '#5a6a76' }, { size: [0.08, 0.8, 0.08], at: [2, 2.3, 1.2], color: '#5a6a76' },
+    { size: [0.08, 0.8, 0.08], at: [4, 2.3, 1.2], color: '#5a6a76' }, { size: [0.08, 0.8, 0.08], at: [6, 2.3, 1.2], color: '#5a6a76' },
+    { size: [0.08, 0.8, 0.08], at: [8, 2.3, 1.2], color: '#5a6a76' },              // rail posts
+    { size: [30, 0.06, 0.06], at: [0, 0.6, 1.72], color: '#5a6a76' },             // hull panel line
+    { size: [30, 0.06, 0.06], at: [0, -0.1, 1.72], color: '#54626e' },            // hull panel line
   ],
-  lamps: [ { x: -1.2, z: 1.4, h: 3.4 } ],                                          // deck lamp
+  lamps: [ { x: -1.2, z: 1.4, h: 3.4 }, { x: 7.5, z: 1.0, h: 3.0 } ],              // deck lamp + far-end lamp
 };
 const LONDON = {
   name: 'london', sky: 'indoor',
   sun: { dir: [-0.5, 0.6, 0.5], warm: '#ffe2b0', cool: '#8a7a66' },
   ground: [ { kind: 'floor', color: '#6e5638', x: [-12, 12], z: [-14, 8], tile: 3 } ],
   walls: [
-    { x: 0, z: -9, w: 18, h: 6.5, th: 0.6, color: '#8a7452', door: { x: -4.5, h: 3.3, color: '#4a3a28' }, windows: [ { x: -3.5, y: 1.2, w: 3.4, h: 2.6 } ] },
+    { x: 0, z: -9, w: 18, h: 6.5, th: 0.6, color: '#8a7452', door: { x: -4.5, h: 3.3, color: '#4a3a28' }, windows: [ { x: 4.5, y: 1.2, w: 3.4, h: 2.6 } ] },
     { x: -8, z: -1, w: 10, h: 6.5, th: 0.6, ry: 90, color: '#7d684a' },
     { x: 8, z: -1, w: 10, h: 6.5, th: 0.6, ry: -90, color: '#7d684a' },
   ],
   boxes: [
     { size: [7, 4.2, 0.3], at: [-1.5, 1.2, -8.6], color: '#c9bd9e' },             // map board (6+ D behind the officers)
+    { size: [7.4, 0.3, 0.4], at: [-1.5, 5.4, -8.55], color: '#5a4630' },          // board frame top
+    { size: [7.4, 0.3, 0.4], at: [-1.5, 1.2, -8.55], color: '#5a4630' },          // board frame bottom
+    { size: [0.3, 4.5, 0.4], at: [-5, 3.3, -8.55], color: '#5a4630' },            // board frame left
+    { size: [0.3, 4.5, 0.4], at: [2, 3.3, -8.55], color: '#5a4630' },             // board frame right
+    { size: [0.18, 0.18, 0.12], at: [-4.2, 4.4, -8.4], color: '#c8402e' }, { size: [0.18, 0.18, 0.12], at: [-2.6, 3.8, -8.4], color: '#c8402e' },
+    { size: [0.18, 0.18, 0.12], at: [-1.0, 4.6, -8.4], color: '#2e6ec8' }, { size: [0.18, 0.18, 0.12], at: [0.8, 3.6, -8.4], color: '#2e6ec8' },
+    { size: [0.18, 0.18, 0.12], at: [-3.4, 2.6, -8.4], color: '#e8c832' }, { size: [0.18, 0.18, 0.12], at: [-0.4, 2.2, -8.4], color: '#e8c832' },
+    { size: [0.18, 0.18, 0.12], at: [1.4, 4.8, -8.4], color: '#c8402e' }, { size: [0.18, 0.18, 0.12], at: [-4.6, 1.9, -8.4], color: '#2e6ec8' },   // map pins
+    { size: [2.6, 0.05, 0.06], at: [-2.4, 4.0, -8.42], color: '#c8402e' },        // string line
+    { size: [2.2, 0.05, 0.06], at: [0.2, 4.2, -8.42], color: '#2e6ec8' },         // string line
     { size: [2.2, 1.1, 0.25], at: [-3.4, 2.2, -8.4], color: '#a8433a' },          // red arrow block (the lie)
     { size: [2.2, 1.1, 0.25], at: [0.4, 2.2, -8.4], color: '#3a6e8a' },           // blue arrow block (the truth)
     { size: [3.4, 2.4, 0.4], at: [-4.5, 0, -12.5], color: '#e8d9ae' },             // lit corridor beyond the door
@@ -63,6 +85,16 @@ const BERLIN = {
   ],
   boxes: [
     { size: [10, 4.6, 0.3], at: [-1, 1.1, -9.1], color: '#b8bdaa' },              // the big map board (7+ D behind the officers)
+    { size: [10.4, 0.3, 0.4], at: [-1, 5.7, -9.05], color: '#4c5044' },           // board frame top
+    { size: [10.4, 0.3, 0.4], at: [-1, 1.1, -9.05], color: '#4c5044' },           // board frame bottom
+    { size: [0.3, 4.9, 0.4], at: [-6, 3.4, -9.05], color: '#4c5044' },            // board frame left
+    { size: [0.3, 4.9, 0.4], at: [4, 3.4, -9.05], color: '#4c5044' },             // board frame right
+    { size: [0.18, 0.18, 0.12], at: [-5.0, 4.6, -8.9], color: '#c8402e' }, { size: [0.18, 0.18, 0.12], at: [-3.0, 3.6, -8.9], color: '#c8402e' },
+    { size: [0.18, 0.18, 0.12], at: [-1.2, 4.9, -8.9], color: '#e8c832' }, { size: [0.18, 0.18, 0.12], at: [1.0, 3.9, -8.9], color: '#c8402e' },
+    { size: [0.18, 0.18, 0.12], at: [2.6, 4.7, -8.9], color: '#e8c832' }, { size: [0.18, 0.18, 0.12], at: [-4.0, 2.2, -8.9], color: '#c8402e' },
+    { size: [0.18, 0.18, 0.12], at: [0.2, 2.5, -8.9], color: '#c8402e' }, { size: [0.18, 0.18, 0.12], at: [3.2, 2.1, -8.9], color: '#e8c832' },   // map pins
+    { size: [3.2, 0.05, 0.06], at: [-2.2, 4.2, -8.92], color: '#c8402e' },        // string line
+    { size: [2.6, 0.05, 0.06], at: [1.6, 4.4, -8.92], color: '#c8402e' },         // string line
     { size: [2.6, 1.2, 0.25], at: [-3.8, 2.4, -8.9], color: '#a8433a' },          // arrows to Greece
     { size: [2.6, 1.2, 0.25], at: [-0.6, 2.4, -8.9], color: '#a8433a' },          // arrows to Sardinia
     { size: [1.6, 1.6, 0.5], at: [5.8, 0, -3.4], color: '#4c5044' },              // cabinet
@@ -77,8 +109,9 @@ const SICILY = {
   ground: [ { kind: 'sand', color: '#d9c08e', x: [-40, 40], z: [-4, 16], tile: 4 } ],
   water: { z0: -4, z1: -120, y: -0.6, color: '#3f7fa8' },
   boxes: [
-    { size: [7, 2.6, 3.2], at: [-3, -0.2, -3.4], color: '#5c6650' },              // landing craft
-    { size: [5.5, 0.3, 2.2], at: [-3, 0.1, -1.2], color: '#4c5544' },             // its ramp
+    { size: [7, 2.6, 3.2], at: [-4, -0.2, -6.5], color: '#5c6650' },              // landing craft (in the shallows, clear of the soldiers)
+    { size: [5.5, 0.3, 2.2], at: [-4, 0.1, -4.3], color: '#4c5544' },             // its ramp
+    { size: [7, 2.6, 3.2], at: [10, -0.2, -14], color: '#66725c' },               // a second craft far off (depth cue)
     { size: [1.6, 0.9, 1.0], at: [3.4, 0, 1.8], color: '#7a6a48' },               // crates ashore
     { size: [1.2, 0.7, 0.8], at: [4.6, 0, 2.2], color: '#6a5c3e' },
     { size: [26, 4.5, 3], at: [4, 0, 24], color: '#b49a6a' },                     // dunes / hills far side
