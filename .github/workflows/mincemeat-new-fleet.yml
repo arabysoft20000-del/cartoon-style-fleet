@@ -1,0 +1,165 @@
+name: Mincemeat New Fleet Render
+
+# Fleet render for the NEW mincemeat film (work/cartoon/scenes/film.js).
+# Written from this film's own inputs and the repo's scripts/ interfaces:
+#   scripts/render-chunk.mjs <start> <end> <out.mp4>  (env: FILM_BASE, FILM_FILE, FPS, W, H)
+#   scripts/make-matrix.mjs <N> [chunks] --json       (N = total frames from initFilm)
+#   scripts/harness.html                              (initFilm; window.ready -> info.N)
+
+"on":
+  workflow_dispatch:
+    inputs:
+      film_base:
+        description: "Project base served by the harness (projectBase)"
+        required: true
+        default: "/work/cartoon/"
+      film_file:
+        description: "Film entry, relative to film_base"
+        required: true
+        default: "scenes/film.js"
+      fps:
+        description: "Frames per second"
+        required: true
+        default: "30"
+      width:
+        description: "Frame width (px)"
+        required: true
+        default: "1080"
+      height:
+        description: "Frame height (px)"
+        required: true
+        default: "1920"
+
+jobs:
+  matrix:
+    name: Probe film and build 20-chunk matrix
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.matrix.outputs.matrix }}
+      total_frames: ${{ steps.probe.outputs.total_frames }}
+    env:
+      FILM_BASE: ${{ github.event.inputs.film_base }}
+      FILM_FILE: ${{ github.event.inputs.film_file }}
+      FPS: ${{ github.event.inputs.fps }}
+      W: ${{ github.event.inputs.width }}
+      H: ${{ github.event.inputs.height }}
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install dependencies (package.json)
+        run: npm install --no-audit --no-fund
+
+      - name: Install Playwright Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Install ffmpeg (probe encodes one frame)
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+
+      - name: Probe film for total frame count N
+        id: probe
+        run: |
+          set -euo pipefail
+          node scripts/render-chunk.mjs 0 0 probe.mp4 2>&1 | tee probe.log
+          N=$(node -e "
+            const fs = require('fs');
+            const line = fs.readFileSync('probe.log', 'utf8').split('\n').find(l => l.startsWith('INIT OK '));
+            if (!line) { console.error('INIT OK line not found in probe log'); process.exit(1); }
+            const ready = JSON.parse(line.slice('INIT OK '.length));
+            const n = ready && ready.info && ready.info.N;
+            if (!Number.isInteger(n) || n <= 0) { console.error('Bad N in probe: ' + n); process.exit(1); }
+            console.log(n);
+          ")
+          echo "Total frames N=$N"
+          echo "total_frames=$N" >> "$GITHUB_OUTPUT"
+
+      - name: Build 20-chunk matrix
+        id: matrix
+        run: |
+          set -euo pipefail
+          node scripts/make-matrix.mjs "${{ steps.probe.outputs.total_frames }}" 20 --json > matrix.json
+          MATRIX=$(node -e "
+            const m = JSON.parse(require('fs').readFileSync('matrix.json', 'utf8'));
+            console.log(JSON.stringify({ include: m.entries }));
+          ")
+          echo "matrix=$MATRIX" >> "$GITHUB_OUTPUT"
+
+  render:
+    name: Render chunk ${{ matrix.chunk }} (${{ matrix.start }}-${{ matrix.end }})
+    needs: matrix
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix: ${{ fromJSON(needs.matrix.outputs.matrix) }}
+    env:
+      FILM_BASE: ${{ github.event.inputs.film_base }}
+      FILM_FILE: ${{ github.event.inputs.film_file }}
+      FPS: ${{ github.event.inputs.fps }}
+      W: ${{ github.event.inputs.width }}
+      H: ${{ github.event.inputs.height }}
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install dependencies (package.json)
+        run: npm install --no-audit --no-fund
+
+      - name: Install Playwright Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Install ffmpeg (render-chunk encodes the chunk mp4)
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+
+      - name: Render chunk ${{ matrix.chunk }}
+        run: node scripts/render-chunk.mjs ${{ matrix.start }} ${{ matrix.end }} chunk-${{ matrix.chunk }}.mp4
+
+      - name: Upload chunk artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: chunk-${{ matrix.chunk }}
+          path: chunk-${{ matrix.chunk }}.mp4
+          if-no-files-found: error
+
+  assemble:
+    name: Assemble final film
+    needs: render
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository (for the film audio)
+        uses: actions/checkout@v4
+
+      - name: Download chunk artifacts
+        uses: actions/download-artifact@v4
+        with:
+          pattern: chunk-*
+          path: chunks
+          merge-multiple: true
+
+      - name: Install ffmpeg
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+
+      - name: Concatenate chunks and mux film audio
+        run: |
+          set -euo pipefail
+          ls chunks/
+          for f in $(ls chunks/chunk-*.mp4 | sort); do echo "file '$PWD/$f'"; done > concat.txt
+          cat concat.txt
+          ffmpeg -y -f concat -safe 0 -i concat.txt -c copy video-only.mp4
+          ffmpeg -y -i video-only.mp4 -i work/cartoon/audio/clean.wav -c:v copy -c:a aac -shortest mincemeat-new-final.mp4
+
+      - name: Upload final film artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: mincemeat-new-final
+          path: mincemeat-new-final.mp4
+          if-no-files-found: error
