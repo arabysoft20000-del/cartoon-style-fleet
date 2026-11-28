@@ -62,10 +62,10 @@ export default {
     officer1: {
       face: [ { t: 'line:5.start', eyes: 'open', brow: 'on', mouth: 'rest' }, { t: 'line:6.word:5', eyes: 'smug', brow: 'on', mouth: 'smirk' },
               { t: 'line:12.word:3', eyes: 'open', brow: 'up', mouth: 'smile' }, { t: 'line:16.word:5', eyes: 'smug', brow: 'on', mouth: 'smirk' } ],
-      look: [ { t: 'line:5.start', at: [400.6, 2.2, -400.4] }, { t: 'line:7.word:2', at: [398.5, 3.2, -403.4] } ],
-      clips: [ { clip: 'point', t0: 'line:7.word:3', side: 'R', dir: [-0.5, 0.25, 0.2], hold: .8, out: 6 },
+      look: [ { t: 'line:5.start', at: [400.6, 2.2, -400.4] }, { t: 'line:7.word:2', at: [392.5, 3.4, -414] } ],
+      clips: [ { clip: 'point', t0: 'line:7.word:3', side: 'R', dir: [-0.8, 0.25, -0.3], hold: .8, out: 6 },
                { clip: 'pick_up', t0: 'line:10.word:2', prop: 'briefcase', side: 'R' },
-               { clip: 'point', t0: 'line:12.word:6', side: 'L', dir: [0.5, 0.3, 0.2], hold: .8, out: 6 },
+               { clip: 'point', t0: 'line:12.word:6', side: 'L', dir: [-0.8, 0.3, -0.3], hold: .8, out: 6 },
                { clip: 'akimbo', t0: 'line:16.word:6', side: 'both' } ],
     },
     officer2: {
@@ -75,14 +75,14 @@ export default {
       clips: [ { clip: 'hand_to_temple', t0: 'line:6.word:4' },
                { clip: 'pick_up', t0: 'line:8.word:4', prop: 'letter2', side: 'L' },
                { clip: 'put_down', t0: 'line:8.word:9', prop: 'letter2', side: 'L' },
-               { clip: 'point', t0: 'line:11.word:4', side: 'R', dir: [-0.5, 0.3, 0.2], hold: .8, out: 6 } ],
+               { clip: 'point', t0: 'line:11.word:4', side: 'R', dir: [-0.8, 0.3, -0.3], hold: .8, out: 6 } ],
     },
     german1: {
       face: [ { t: 'line:13.word:8', eyes: 'open', brow: 'knit', mouth: 'rest' }, { t: 'line:14.word:2', eyes: 'wide', brow: 'up', mouth: 'o' },
               { t: 'line:15.word:3', eyes: 'angry', brow: 'down', mouth: 'tight' } ],
-      look: [ { t: 'line:13.word:8', at: [400.6, 2.2, 400.2] }, { t: 'line:15.word:2', at: [399, 3.4, 396.8] } ],
+      look: [ { t: 'line:13.word:8', at: [400.6, 2.2, 400.2] }, { t: 'line:15.word:2', at: [391.5, 3.4, 385] } ],
       clips: [ { clip: 'lean_over', t0: 'line:13.word:9' },
-               { clip: 'point', t0: 'line:15.word:3', side: 'R', dir: [-0.5, 0.3, 0.2], hold: .9, out: 6 } ],
+               { clip: 'point', t0: 'line:15.word:3', side: 'R', dir: [-0.8, 0.3, -0.3], hold: .9, out: 6 } ],
     },
     german2: {
       face: [ { t: 'line:13.word:8', eyes: 'open', brow: 'on', mouth: 'rest' }, { t: 'line:14.word:3', expr: 'gulp' } ],

@@ -31,7 +31,7 @@ const SUB = {
     { size: [30, 0.5, 2.6], at: [0, 1.8, 0], color: '#4a5864' },                  // deck
     { size: [4.5, 2.6, 2.2], at: [-3, 2.3, 0], color: '#46525e' },                // conning tower
     { size: [0.3, 2.2, 0.3], at: [-3.6, 4.9, 0], color: '#39444e' },              // periscope mast
-    { size: [1.0, 1.8, 0.08], at: [-0.9, 2.6, 1.12], color: '#ffd98a' },            // lit hatch door on the tower (visible light source)
+    { size: [1.0, 1.8, 0.08], at: [-0.9, 2.6, 1.12], color: '#ffe9a8' },            // lit hatch door on the tower (visible light source)
     { size: [2.4, 0.4, 0.9], at: [2.9, 2.3, 0.4], color: '#6a5c44' },             // covered stretcher on deck (clear of the sailor's feet)
     { size: [0.8, 0.8, 0.8], at: [4.5, 2.3, -0.6], color: '#55626e' },            // deck gear
     { size: [17, 0.08, 0.08], at: [0, 3.05, 1.2], color: '#5a6a76' },             // deck rail (top bar)
@@ -42,12 +42,12 @@ const SUB = {
     { size: [0.08, 0.8, 0.08], at: [8, 2.3, 1.2], color: '#5a6a76' },              // rail posts
     { size: [30, 0.06, 0.06], at: [0, 0.6, 1.72], color: '#5a6a76' },             // hull panel line
     { size: [30, 0.06, 0.06], at: [0, -0.1, 1.72], color: '#54626e' },            // hull panel line
-    { size: [14, 3, 3], at: [-6, -0.6, -38], color: '#22384c' },                  // distant ship on the horizon (far end, in frame behind the sailor)
-    { size: [0.9, 0.9, 0.9], at: [-6, 2.6, -38], color: '#ffd98a' },              // its lamp
-    { size: [1.1, 1.1, 1.1], at: [2.2, 2.41, 1.6], color: '#ffd25e' },           // big glowing head on the deck lamp (right of the sailor, clear of the tower)
+    { size: [14, 3, 3], at: [-3, -0.6, -30], color: '#22384c' },                  // distant ship on the horizon (far end, in frame behind the sailor)
+    { size: [0.9, 0.9, 0.9], at: [-3, 2.6, -30], color: '#ffd98a' },              // its lamp
+    { size: [1.1, 1.1, 1.1], at: [0.6, 2.41, -1.5], color: '#ffd25e' },           // big glowing head on the deck lamp (behind the sailor)
     { size: [1.1, 1.1, 1.1], at: [7.5, 2.01, 1.0], color: '#ffd25e' },            // big glowing head on the far-end lamp
   ],
-  lamps: [ { x: 2.2, z: 1.6, h: 3.4, glow: '#ffc24d', color: '#2c343c' }, { x: 7.5, z: 1.0, h: 3.0, glow: '#ffc24d', color: '#2c343c' } ],              // deck lamp (right of the sailor) + far-end lamp
+  lamps: [ { x: 0.6, z: -1.5, h: 3.4, glow: '#ffc24d', color: '#2c343c' }, { x: 7.5, z: 1.0, h: 3.0, glow: '#ffc24d', color: '#2c343c' } ],              // deck lamp (behind the sailor) + far-end lamp
 };
 const LONDON = {
   name: 'london', sky: 'indoor',
@@ -59,22 +59,24 @@ const LONDON = {
     { x: 8, z: -12, w: 34, h: 6.5, th: 0.6, ry: -90, color: '#7d684a' },
   ],
   boxes: [
-    { size: [7, 4.2, 0.3], at: [-5.0, 1.2, -12], color: '#c9bd9e' },             // map board (mid-ground, left; far wall + door read behind the faces)
-    { size: [7.4, 0.3, 0.4], at: [-5.0, 5.4, -11.95], color: '#5a4630' },          // board frame top
-    { size: [7.4, 0.3, 0.4], at: [-5.0, 1.2, -11.95], color: '#5a4630' },          // board frame bottom
-    { size: [0.3, 4.5, 0.4], at: [-8.5, 3.3, -11.95], color: '#5a4630' },            // board frame left
-    { size: [0.3, 4.5, 0.4], at: [-1.5, 3.3, -11.95], color: '#5a4630' },             // board frame right
-    { size: [0.18, 0.18, 0.12], at: [-7.7, 4.4, -11.8], color: '#c8402e' }, { size: [0.18, 0.18, 0.12], at: [-6.1, 3.8, -11.8], color: '#c8402e' },
-    { size: [0.18, 0.18, 0.12], at: [-4.5, 4.6, -11.8], color: '#2e6ec8' }, { size: [0.18, 0.18, 0.12], at: [-2.7, 3.6, -11.8], color: '#2e6ec8' },
-    { size: [0.18, 0.18, 0.12], at: [-6.9, 2.6, -11.8], color: '#e8c832' }, { size: [0.18, 0.18, 0.12], at: [-3.9, 2.2, -11.8], color: '#e8c832' },
-    { size: [0.18, 0.18, 0.12], at: [-2.1, 4.8, -11.8], color: '#c8402e' }, { size: [0.18, 0.18, 0.12], at: [-8.1, 1.9, -11.8], color: '#2e6ec8' },   // map pins
-    { size: [2.6, 0.05, 0.06], at: [-5.9, 4.0, -11.82], color: '#c8402e' },        // string line
-    { size: [2.2, 0.05, 0.06], at: [-3.3, 4.2, -11.82], color: '#2e6ec8' },         // string line
-    { size: [2.2, 1.1, 0.25], at: [-6.9, 2.2, -11.8], color: '#a8433a' },          // red arrow block (the lie)
-    { size: [2.2, 1.1, 0.25], at: [-3.1, 2.2, -11.8], color: '#3a6e8a' },           // blue arrow block (the truth)
-    { size: [3.4, 2.4, 0.4], at: [3.5, 0, -28.5], color: '#e8d9ae' },             // lit corridor beyond the far door
+    { size: [0.3, 4.2, 7], at: [-7.7, 1.2, -14], color: '#c9bd9e' },             // map board ON THE LEFT WALL (far wall + glowing door read behind the faces)
+    { size: [0.4, 0.3, 7.4], at: [-7.65, 5.4, -14], color: '#5a4630' },          // board frame top
+    { size: [0.4, 0.3, 7.4], at: [-7.65, 1.2, -14], color: '#5a4630' },          // board frame bottom
+    { size: [0.4, 4.5, 0.3], at: [-7.65, 3.3, -17.5], color: '#5a4630' },            // board frame far
+    { size: [0.4, 4.5, 0.3], at: [-7.65, 3.3, -10.5], color: '#5a4630' },             // board frame near
+    { size: [0.12, 0.18, 0.18], at: [-7.5, 4.4, -16.2], color: '#c8402e' }, { size: [0.12, 0.18, 0.18], at: [-7.5, 3.8, -14.6], color: '#c8402e' },
+    { size: [0.12, 0.18, 0.18], at: [-7.5, 4.6, -13.0], color: '#2e6ec8' }, { size: [0.12, 0.18, 0.18], at: [-7.5, 3.6, -11.2], color: '#2e6ec8' },
+    { size: [0.12, 0.18, 0.18], at: [-7.5, 2.6, -15.4], color: '#e8c832' }, { size: [0.12, 0.18, 0.18], at: [-7.5, 2.2, -12.4], color: '#e8c832' },
+    { size: [0.12, 0.18, 0.18], at: [-7.5, 4.8, -11.6], color: '#c8402e' }, { size: [0.12, 0.18, 0.18], at: [-7.5, 1.9, -16.6], color: '#2e6ec8' },   // map pins
+    { size: [0.06, 0.05, 2.6], at: [-7.52, 4.0, -14.5], color: '#c8402e' },        // string line
+    { size: [0.06, 0.05, 2.2], at: [-7.52, 4.2, -13.0], color: '#2e6ec8' },         // string line
+    { size: [0.25, 1.1, 2.2], at: [-7.5, 2.2, -15.5], color: '#a8433a' },          // red arrow block (the lie)
+    { size: [0.25, 1.1, 2.2], at: [-7.5, 2.2, -12.5], color: '#3a6e8a' },           // blue arrow block (the truth)
+    { size: [4.5, 3.6, 0.4], at: [3.5, 0, -28.5], color: '#f5e6b8' },             // lit corridor beyond the far door
+    { size: [2.2, 3.2, 0.2], at: [3.5, 0, -25.6], color: '#ffeec0' },             // the glowing doorway itself
     { size: [1.4, 1.8, 0.5], at: [5.6, 0, -3.6], color: '#5a4630' },              // filing cabinet
     { size: [17, 0.3, 34], at: [0, 6.2, -12], color: '#9a8464' },                 // ceiling slab over the deep room
+    { size: [3.0, 0.15, 1.4], at: [0, 4.6, -6], color: '#ffe9b0' },               // ceiling light panel (visible source)
     { size: [1.1, 1.1, 1.1], at: [-2.2, 1.41, -0.8], color: '#ffd98a' },          // big glowing head on the desk lamp
     { size: [1.1, 1.1, 1.1], at: [6.2, 2.21, -6.5], color: '#ffd98a' },           // big glowing head on the room lamp
     { size: [0.45, 0.6, 0.45], at: [2.3, 1.15, -1.5], color: '#ffe2a0' },           // small lamp on the desk corner (below chin height)
@@ -93,22 +95,24 @@ const BERLIN = {
     { x: 9, z: -12, w: 34, h: 6.5, th: 0.6, ry: -90, color: '#606457' },
   ],
   boxes: [
-    { size: [10, 4.6, 0.3], at: [-3.5, 1.1, -13], color: '#b8bdaa' },              // the big map board (mid-ground, left; far wall + door read behind the faces)
-    { size: [10.4, 0.3, 0.4], at: [-3.5, 5.7, -12.95], color: '#4c5044' },           // board frame top
-    { size: [10.4, 0.3, 0.4], at: [-3.5, 1.1, -12.95], color: '#4c5044' },           // board frame bottom
-    { size: [0.3, 4.9, 0.4], at: [-8.5, 3.4, -12.95], color: '#4c5044' },            // board frame left
-    { size: [0.3, 4.9, 0.4], at: [1.5, 3.4, -12.95], color: '#4c5044' },             // board frame right
-    { size: [0.18, 0.18, 0.12], at: [-7.5, 4.6, -12.8], color: '#c8402e' }, { size: [0.18, 0.18, 0.12], at: [-5.5, 3.6, -12.8], color: '#c8402e' },
-    { size: [0.18, 0.18, 0.12], at: [-3.7, 4.9, -12.8], color: '#e8c832' }, { size: [0.18, 0.18, 0.12], at: [-1.5, 3.9, -12.8], color: '#c8402e' },
-    { size: [0.18, 0.18, 0.12], at: [0.1, 4.7, -12.8], color: '#e8c832' }, { size: [0.18, 0.18, 0.12], at: [-6.5, 2.2, -12.8], color: '#c8402e' },
-    { size: [0.18, 0.18, 0.12], at: [-2.3, 2.5, -12.8], color: '#c8402e' }, { size: [0.18, 0.18, 0.12], at: [0.7, 2.1, -12.8], color: '#e8c832' },   // map pins
-    { size: [3.2, 0.05, 0.06], at: [-4.7, 4.2, -12.82], color: '#c8402e' },        // string line
-    { size: [2.6, 0.05, 0.06], at: [-0.9, 4.4, -12.82], color: '#c8402e' },         // string line
-    { size: [2.6, 1.2, 0.25], at: [-6.3, 2.4, -12.8], color: '#a8433a' },          // arrows to Greece
-    { size: [2.6, 1.2, 0.25], at: [-3.1, 2.4, -12.8], color: '#a8433a' },          // arrows to Sardinia
+    { size: [0.3, 4.6, 10], at: [-8.7, 1.1, -15], color: '#b8bdaa' },              // the big map board ON THE LEFT WALL (far wall + glowing door read behind the faces)
+    { size: [0.4, 0.3, 10.4], at: [-8.65, 5.7, -15], color: '#4c5044' },           // board frame top
+    { size: [0.4, 0.3, 10.4], at: [-8.65, 1.1, -15], color: '#4c5044' },           // board frame bottom
+    { size: [0.4, 4.9, 0.3], at: [-8.65, 3.4, -20], color: '#4c5044' },            // board frame far
+    { size: [0.4, 4.9, 0.3], at: [-8.65, 3.4, -10], color: '#4c5044' },             // board frame near
+    { size: [0.12, 0.18, 0.18], at: [-8.5, 4.6, -18.5], color: '#c8402e' }, { size: [0.12, 0.18, 0.18], at: [-8.5, 3.6, -16.5], color: '#c8402e' },
+    { size: [0.12, 0.18, 0.18], at: [-8.5, 4.9, -14.7], color: '#e8c832' }, { size: [0.12, 0.18, 0.18], at: [-8.5, 3.9, -12.5], color: '#c8402e' },
+    { size: [0.12, 0.18, 0.18], at: [-8.5, 4.7, -10.9], color: '#e8c832' }, { size: [0.12, 0.18, 0.18], at: [-8.5, 2.2, -17.5], color: '#c8402e' },
+    { size: [0.12, 0.18, 0.18], at: [-8.5, 2.5, -13.3], color: '#c8402e' }, { size: [0.12, 0.18, 0.18], at: [-8.5, 2.1, -10.3], color: '#e8c832' },   // map pins
+    { size: [0.06, 0.05, 3.2], at: [-8.52, 4.2, -15.5], color: '#c8402e' },        // string line
+    { size: [0.06, 0.05, 2.6], at: [-8.52, 4.4, -13.0], color: '#c8402e' },         // string line
+    { size: [0.25, 1.2, 2.6], at: [-8.5, 2.4, -17], color: '#a8433a' },          // arrows to Greece
+    { size: [0.25, 1.2, 2.6], at: [-8.5, 2.4, -13.5], color: '#a8433a' },          // arrows to Sardinia
     { size: [1.6, 1.6, 0.5], at: [5.8, 0, -3.4], color: '#4c5044' },              // cabinet
-    { size: [3.4, 2.4, 0.4], at: [4.5, 0, -28.5], color: '#cfd4b8' },               // lit corridor beyond the far door
+    { size: [4.5, 3.6, 0.4], at: [4.5, 0, -28.5], color: '#e8ecd0' },               // lit corridor beyond the far door
+    { size: [2.2, 3.2, 0.2], at: [4.5, 0, -25.6], color: '#f2f4d8' },               // the glowing doorway itself
     { size: [19, 0.3, 34], at: [0, 6.2, -12], color: '#8a8e80' },                  // ceiling slab over the deep room
+    { size: [3.0, 0.15, 1.4], at: [0, 4.6, -6], color: '#eef0c8' },               // ceiling light panel (visible source)
     { size: [1.2, 1.2, 1.2], at: [5.2, 2.56, -2.5], color: '#eef0c8' },           // big glowing head on the overhead lamp
     { size: [1.1, 1.1, 1.1], at: [-5.4, 2.01, 2.2], color: '#eef0c8' },           // big glowing head on the wall lamp
     { size: [0.45, 0.6, 0.45], at: [2.8, 1.1, -1.0], color: '#f2f4d8' },            // small lamp on the table corner (below chin height)
