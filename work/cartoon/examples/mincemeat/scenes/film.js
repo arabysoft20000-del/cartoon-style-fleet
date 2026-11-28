@@ -106,7 +106,7 @@ export default {
     },
   },
   props: [
-    { id: 'briefcase', kind: 'bag', in: 'world', at: [1.9, 0.32, 1.5], rot: [0, 20, 0],
+    { id: 'briefcase', kind: 'bag', in: 'world', at: [-0.1, 0.32, 2.1], rot: [0, 20, 0],
       keys: [ { t: 'line:3.start', in: 'world', at: [402.0, 2.35, 0.6], rot: [0, -15, 0] },
               { t: 'line:5.start', in: 'world', at: [399.3, 1.35, -401.5], rot: [0, 10, 0] } ] },
     { id: 'letter1', kind: 'letter', owner: 'officer1', in: 'hand:R',

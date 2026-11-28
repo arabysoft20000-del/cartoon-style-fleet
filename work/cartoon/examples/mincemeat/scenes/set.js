@@ -6,14 +6,14 @@ const SHORE = {
   ground: [ { kind: 'sand', color: '#c9b183', x: [-40, 40], z: [-6, 12], tile: 4 }, { color: '#b49a6e', z: [-8, -5.5], y: -0.15 } ],
   water: { z0: -8, z1: -160, y: -0.5, color: '#4d7d99' },
   boxes: [
-    { size: [2.4, 0.55, 1.0], at: [0.9, 0, 1.4], color: '#7a6a52' },              // the covered shape (blanket over it, never a body)
+    { size: [2.4, 0.55, 1.0], at: [-0.6, 0, 1.8], color: '#7a6a52' },             // the covered shape (blanket over it, never a body) — in shot 1
     { size: [3.2, 0.5, 1.2], at: [-6, 0, -2], color: '#6e4f33' },                // beached rowboat hull
     { size: [0.5, 0.5, 0.5], at: [-2.2, 0, 1.2], color: '#8a6a3a' },              // crate
     { size: [0.45, 0.45, 0.45], at: [-2.2, 0.5, 1.2], color: '#7a5c30' },         // crate on crate
     { size: [1.2, 5.5, 1.2], at: [-16, 0, -14], color: '#d8d2c4' },               // lighthouse tower (far, left)
     { size: [1.5, 0.8, 1.5], at: [-16, 5.5, -14], color: '#ffe9a8' },             // lighthouse lamp room
   ],
-  lamps: [ { x: -1.9, z: 0.4, h: 1.6 } ],                                          // fisherman's lantern post (low)
+  lamps: [ { x: -3.8, z: -0.6, h: 1.6 } ],                                        // fisherman's lantern post (low, clear of shot 1's face)
   trees: [ { x: 9, z: -4, h: 7 } ],
   fences: [ { from: [-10, -4.5], to: [10, -4.5], h: 1.1, gap: 3, rails: 2, color: '#9a8464' } ],
 };
@@ -27,7 +27,7 @@ const SUB = {
     { size: [30, 0.5, 2.6], at: [0, 1.8, 0], color: '#4a5864' },                  // deck
     { size: [4.5, 2.6, 2.2], at: [-3, 2.3, 0], color: '#46525e' },                // conning tower
     { size: [0.3, 2.2, 0.3], at: [-3.6, 4.9, 0], color: '#39444e' },              // periscope mast
-    { size: [2.4, 0.4, 0.9], at: [1.6, 2.3, 0.4], color: '#6a5c44' },             // covered stretcher on deck
+    { size: [2.4, 0.4, 0.9], at: [2.9, 2.3, 0.4], color: '#6a5c44' },             // covered stretcher on deck (clear of the sailor's feet)
     { size: [0.8, 0.8, 0.8], at: [4.5, 2.3, -0.6], color: '#55626e' },            // deck gear
   ],
   lamps: [ { x: -1.2, z: 1.4, h: 3.4 } ],                                          // deck lamp
@@ -35,17 +35,17 @@ const SUB = {
 const LONDON = {
   name: 'london', sky: 'indoor',
   sun: { dir: [-0.5, 0.6, 0.5], warm: '#ffe2b0', cool: '#8a7a66' },
-  ground: [ { kind: 'floor', color: '#6e5638', x: [-12, 12], z: [-10, 8], tile: 3 } ],
+  ground: [ { kind: 'floor', color: '#6e5638', x: [-12, 12], z: [-14, 8], tile: 3 } ],
   walls: [
-    { x: 0, z: -5, w: 18, h: 6.5, th: 0.6, color: '#8a7452', door: { x: -4.5, h: 3.3, color: '#4a3a28' }, windows: [ { x: -3.5, y: 1.2, w: 3.4, h: 2.6 } ] },
+    { x: 0, z: -9, w: 18, h: 6.5, th: 0.6, color: '#8a7452', door: { x: -4.5, h: 3.3, color: '#4a3a28' }, windows: [ { x: -3.5, y: 1.2, w: 3.4, h: 2.6 } ] },
     { x: -8, z: -1, w: 10, h: 6.5, th: 0.6, ry: 90, color: '#7d684a' },
     { x: 8, z: -1, w: 10, h: 6.5, th: 0.6, ry: -90, color: '#7d684a' },
   ],
   boxes: [
-    { size: [7, 4.2, 0.3], at: [-1.5, 1.2, -4.6], color: '#c9bd9e' },             // map board
-    { size: [2.2, 1.1, 0.25], at: [-3.4, 2.2, -4.4], color: '#a8433a' },          // red arrow block (the lie)
-    { size: [2.2, 1.1, 0.25], at: [0.4, 2.2, -4.4], color: '#3a6e8a' },           // blue arrow block (the truth)
-    { size: [3.4, 2.4, 0.4], at: [-4.5, 0, -8.5], color: '#e8d9ae' },              // lit corridor beyond the door
+    { size: [7, 4.2, 0.3], at: [-1.5, 1.2, -8.6], color: '#c9bd9e' },             // map board (6+ D behind the officers)
+    { size: [2.2, 1.1, 0.25], at: [-3.4, 2.2, -8.4], color: '#a8433a' },          // red arrow block (the lie)
+    { size: [2.2, 1.1, 0.25], at: [0.4, 2.2, -8.4], color: '#3a6e8a' },           // blue arrow block (the truth)
+    { size: [3.4, 2.4, 0.4], at: [-4.5, 0, -12.5], color: '#e8d9ae' },             // lit corridor beyond the door
     { size: [1.4, 1.8, 0.5], at: [5.6, 0, -3.6], color: '#5a4630' },              // filing cabinet
   ],
   counters: [ { x: 0, z: -1.2, w: 5.2, d: 1.5, h: 1.15 } ],                        // the desk
@@ -55,16 +55,16 @@ const LONDON = {
 const BERLIN = {
   name: 'berlin', sky: 'indoor',
   sun: { dir: [-0.3, 0.7, 0.4], warm: '#d8dcc8', cool: '#5a6658' },
-  ground: [ { kind: 'floor', color: '#565a50', x: [-13, 13], z: [-10, 8], tile: 3 } ],
+  ground: [ { kind: 'floor', color: '#565a50', x: [-13, 13], z: [-14, 8], tile: 3 } ],
   walls: [
-    { x: 0, z: -5.5, w: 20, h: 6.5, th: 0.6, color: '#6a6e60', windows: [ { x: 6.5, y: 1.4, w: 3.6, h: 2.6 } ] },
+    { x: 0, z: -9.5, w: 20, h: 6.5, th: 0.6, color: '#6a6e60', windows: [ { x: 6.5, y: 1.4, w: 3.6, h: 2.6 } ] },
     { x: -9, z: -1, w: 10, h: 6.5, th: 0.6, ry: 90, color: '#606457' },
     { x: 9, z: -1, w: 10, h: 6.5, th: 0.6, ry: -90, color: '#606457' },
   ],
   boxes: [
-    { size: [10, 4.6, 0.3], at: [-1, 1.1, -5.1], color: '#b8bdaa' },              // the big map board
-    { size: [2.6, 1.2, 0.25], at: [-3.8, 2.4, -4.9], color: '#a8433a' },          // arrows to Greece
-    { size: [2.6, 1.2, 0.25], at: [-0.6, 2.4, -4.9], color: '#a8433a' },          // arrows to Sardinia
+    { size: [10, 4.6, 0.3], at: [-1, 1.1, -9.1], color: '#b8bdaa' },              // the big map board (7+ D behind the officers)
+    { size: [2.6, 1.2, 0.25], at: [-3.8, 2.4, -8.9], color: '#a8433a' },          // arrows to Greece
+    { size: [2.6, 1.2, 0.25], at: [-0.6, 2.4, -8.9], color: '#a8433a' },          // arrows to Sardinia
     { size: [1.6, 1.6, 0.5], at: [5.8, 0, -3.4], color: '#4c5044' },              // cabinet
   ],
   tables: [ { x: 0.6, z: -0.6, w: 4.6, d: 1.8, h: 1.1 } ],
