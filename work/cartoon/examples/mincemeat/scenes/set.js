@@ -17,7 +17,7 @@ const SHORE = {
     { size: [44, 0.08, 0.6], at: [-2, -0.42, -45], color: '#5c86a0' },            // wave line
     { size: [16, 2.2, 3], at: [17, 0, -38], color: '#5e7268' },                   // distant headland (far end, right)
   ],
-  lamps: [ { x: -2.8, z: 0.6, h: 1.6 } ],                                         // fisherman's lantern post (visible practical in shot 1)
+  lamps: [ { x: -2.8, z: 0.6, h: 1.6, glow: '#ffcf4d', color: '#4a3a28' } ],      // fisherman's lantern post (visible practical in shot 1)
   trees: [ { x: 9, z: -4, h: 7 } ],
   fences: [ { from: [-10, -4.5], to: [10, -4.5], h: 1.1, gap: 3, rails: 2, color: '#9a8464' } ],
 };
@@ -31,6 +31,7 @@ const SUB = {
     { size: [30, 0.5, 2.6], at: [0, 1.8, 0], color: '#4a5864' },                  // deck
     { size: [4.5, 2.6, 2.2], at: [-3, 2.3, 0], color: '#46525e' },                // conning tower
     { size: [0.3, 2.2, 0.3], at: [-3.6, 4.9, 0], color: '#39444e' },              // periscope mast
+    { size: [1.0, 1.8, 0.08], at: [-0.9, 2.6, 1.12], color: '#ffd98a' },            // lit hatch door on the tower (visible light source)
     { size: [2.4, 0.4, 0.9], at: [2.9, 2.3, 0.4], color: '#6a5c44' },             // covered stretcher on deck (clear of the sailor's feet)
     { size: [0.8, 0.8, 0.8], at: [4.5, 2.3, -0.6], color: '#55626e' },            // deck gear
     { size: [17, 0.08, 0.08], at: [0, 3.05, 1.2], color: '#5a6a76' },             // deck rail (top bar)
@@ -42,7 +43,7 @@ const SUB = {
     { size: [30, 0.06, 0.06], at: [0, 0.6, 1.72], color: '#5a6a76' },             // hull panel line
     { size: [30, 0.06, 0.06], at: [0, -0.1, 1.72], color: '#54626e' },            // hull panel line
   ],
-  lamps: [ { x: -1.2, z: 1.4, h: 3.4 }, { x: 7.5, z: 1.0, h: 3.0 } ],              // deck lamp + far-end lamp
+  lamps: [ { x: -1.8, z: 1.6, h: 3.4, glow: '#ffc24d', color: '#2c343c' }, { x: 7.5, z: 1.0, h: 3.0, glow: '#ffc24d', color: '#2c343c' } ],              // deck lamp (in front of the tower face, beside the sailor) + far-end lamp
 };
 const LONDON = {
   name: 'london', sky: 'indoor',
@@ -71,7 +72,7 @@ const LONDON = {
     { size: [1.4, 1.8, 0.5], at: [5.6, 0, -3.6], color: '#5a4630' },              // filing cabinet
   ],
   counters: [ { x: 0, z: -1.2, w: 5.2, d: 1.5, h: 1.15 } ],                        // the desk
-  lamps: [ { x: -2.2, z: -0.8, h: 2.4 }, { x: 3.4, z: 2.4, h: 3.2 } ],             // desk lamp + room lamp
+  lamps: [ { x: -1.4, z: -1.0, h: 2.4, glow: '#ffd98a', color: '#3a2e20' }, { x: 6.2, z: -6.5, h: 3.2, glow: '#ffd98a', color: '#3a2e20' } ],             // desk lamp (beside officer1) + room lamp (back corner, clear of camera lines)
   stools: [ { x: -1.2, z: 0.4 }, { x: 1.4, z: 0.4 } ],
 };
 const BERLIN = {
@@ -100,7 +101,7 @@ const BERLIN = {
     { size: [1.6, 1.6, 0.5], at: [5.8, 0, -3.4], color: '#4c5044' },              // cabinet
   ],
   tables: [ { x: 0.6, z: -0.6, w: 4.6, d: 1.8, h: 1.1 } ],
-  lamps: [ { x: 3.8, z: -0.6, h: 4.2 }, { x: -5.4, z: 2.2, h: 3.0 } ],            // overhead lamp + wall lamp
+  lamps: [ { x: 3.8, z: -0.6, h: 3.6, glow: '#eef0c8', color: '#33362e' }, { x: -5.4, z: 2.2, h: 3.0, glow: '#eef0c8', color: '#33362e' } ],            // overhead lamp + wall lamp
   stools: [ { x: -0.6, z: 0.8 }, { x: 1.8, z: 0.8 } ],
 };
 const SICILY = {
@@ -109,14 +110,14 @@ const SICILY = {
   ground: [ { kind: 'sand', color: '#d9c08e', x: [-40, 40], z: [-4, 16], tile: 4 } ],
   water: { z0: -4, z1: -120, y: -0.6, color: '#3f7fa8' },
   boxes: [
-    { size: [7, 2.6, 3.2], at: [-4, -0.2, -6.5], color: '#5c6650' },              // landing craft (in the shallows, clear of the soldiers)
-    { size: [5.5, 0.3, 2.2], at: [-4, 0.1, -4.3], color: '#4c5544' },             // its ramp
+    { size: [7, 2.6, 3.2], at: [-9, -0.2, -11], color: '#5c6650' },              // landing craft (far in the shallows, depth cue not a wall)
+    { size: [5.5, 0.3, 2.2], at: [-9, 0.1, -8.8], color: '#4c5544' },             // its ramp
     { size: [7, 2.6, 3.2], at: [10, -0.2, -14], color: '#66725c' },               // a second craft far off (depth cue)
     { size: [1.6, 0.9, 1.0], at: [3.4, 0, 1.8], color: '#7a6a48' },               // crates ashore
     { size: [1.2, 0.7, 0.8], at: [4.6, 0, 2.2], color: '#6a5c3e' },
     { size: [26, 4.5, 3], at: [4, 0, 24], color: '#b49a6a' },                     // dunes / hills far side
   ],
-  lamps: [ { x: -6.2, z: -2.2, h: 3.0 } ],                                         // boat lamp
+  lamps: [ { x: -6.2, z: -2.2, h: 3.0, glow: '#ffd98a', color: '#3a3a34' } ],                                         // boat lamp
   trees: [ { x: 10, z: 6, h: 8 }, { x: -11, z: 5, h: 7 } ],
 };
 const CEMETERY = {
@@ -135,7 +136,7 @@ const CEMETERY = {
     { size: [0.9, 1.2, 0.3], at: [3.0, 0, -15.4], color: '#948c7c' },
   ],
   signs: [ { text: 'W. MARTIN', x: 0, y: 1.5, z: -0.98, w: 1.3, h: 0.4, post: false } ],
-  lamps: [ { x: 0.9, z: -0.4, h: 0.9 } ],                                          // candle lantern by the grave
+  lamps: [ { x: 0.9, z: -0.4, h: 0.9, glow: '#ffb84d', color: '#4a3a28' } ],                                          // candle lantern by the grave
   trees: [ { x: -7, z: -9, h: 11 }, { x: 7.5, z: -12, h: 12 } ],                   // cypresses
   fences: [ { from: [-10, -18], to: [10, -18], h: 1.2, gap: 2.5, rails: 2, color: '#5a5248' } ],
 };
