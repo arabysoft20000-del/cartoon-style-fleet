@@ -106,7 +106,7 @@ export default {
     },
   },
   props: [
-    { id: 'briefcase', kind: 'bag', in: 'world', at: [1.4, 0.32, 0.5], rot: [0, 20, 0],
+    { id: 'briefcase', kind: 'bag', in: 'world', at: [1.1, 0.32, 0.9], rot: [0, 20, 0],
       keys: [ { t: 'line:3.start', in: 'world', at: [402.0, 2.35, 0.6], rot: [0, -15, 0] },
               { t: 'line:5.start', in: 'world', at: [399.3, 1.35, -401.5], rot: [0, 10, 0] } ] },
     { id: 'letter1', kind: 'letter', owner: 'officer1', in: 'hand:R',
@@ -127,7 +127,7 @@ export default {
   ],
   shots: [
     { t0: 0, t1: 'line:2.start', camera: { move: 'push', from: { pos: [-0.9, 2.4, 12.5], target: [-1.3, 2.5, 0.9], fov: 26 }, to: { pos: [-1.0, 2.35, 11.0], target: [-1.3, 2.5, 0.9], fov: 26 }, roll: [2, 1] } },
-    { t0: 'line:2.start', t1: 'line:3.start', camera: { move: 'push', from: { pos: [0.4, 2.5, 15.5], target: [0.0, 2.4, 1.1], fov: 28 }, to: { pos: [0.3, 2.45, 14.2], target: [0.0, 2.4, 1.1], fov: 28 }, roll: [-2, -1] } },
+    { t0: 'line:2.start', t1: 'line:3.start', camera: { move: 'push', from: { pos: [0.4, 2.5, 16.5], target: [0.0, 2.4, 1.1], fov: 32 }, to: { pos: [0.3, 2.45, 15.2], target: [0.0, 2.4, 1.1], fov: 32 }, roll: [-2, -1] } },
     { t0: 'line:3.start', t1: 'line:4.start', camera: { move: 'push', from: { pos: [402.5, 4.6, 20], target: [400.4, 3.6, 0.4], fov: 30 }, to: { pos: [402.3, 4.5, 18.5], target: [400.4, 3.6, 0.4], fov: 30 }, roll: [1, 2] } },
     { t0: 'line:4.start', t1: 'line:5.start', camera: { move: 'push', from: { pos: [401.2, 4.4, 11.5], target: [400.6, 4.3, 0.6], fov: 26 }, to: { pos: [401.1, 4.35, 10.4], target: [400.6, 4.3, 0.6], fov: 26 }, roll: [-1, -2] } },
     { t0: 'line:5.start', t1: 'line:5.word:6', camera: { move: 'push', from: { pos: [399.6, 2.4, -390.5], target: [399.1, 2.5, -402.2], fov: 26 }, to: { pos: [399.5, 2.35, -391.8], target: [399.1, 2.5, -402.2], fov: 26 }, roll: [2, 1] } },
