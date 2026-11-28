@@ -42,6 +42,7 @@ export default {
   acts: {
     fisherman: {
       face: [ { t: 0, expr: 'fear', react: 'recoil' }, { t: 'line:1.word:3', eyes: 'wide', brow: 'up', mouth: 'o' },
+              { t: 'line:1.word:6', eyes: 'open', brow: 'knit', mouth: 'tight' }, { t: 'line:1.word:8', eyes: 'open', brow: 'worried', mouth: 'flat' },
               { t: 'line:2.start', expr: 'dawning' }, { t: 'line:2.word:5', eyes: 'open', brow: 'knit', mouth: 'flat' } ],
       look: [ { t: 0, at: [0.6, 1.4, 2.4] }, { t: 'line:2.word:4', at: [2.6, 2.2, 2.6] } ],
       clips: [ { clip: 'shock_pop', t0: 'line:1.word:2', hold: .15, out: 6 },
@@ -126,7 +127,7 @@ export default {
     { prop: 'papers', from: 'german2', to: 'german1', t: 'line:13.word:9', fromSide: 'R', toSide: 'R' },
   ],
   shots: [
-    { t0: 0, t1: 'line:2.start', camera: { move: 'push', from: { pos: [-0.9, 2.4, 12.5], target: [-1.3, 2.5, 0.9], fov: 26 }, to: { pos: [-1.0, 2.35, 11.0], target: [-1.3, 2.5, 0.9], fov: 26 }, roll: [2, 1] } },
+    { t0: 0, t1: 'line:2.start', camera: { move: 'push', from: { pos: [3.2, 2.3, 11.5], target: [-1.2, 2.15, 0.8], fov: 26 }, to: { pos: [2.9, 2.25, 10.2], target: [-1.2, 2.15, 0.8], fov: 26 }, roll: [2, 1] } },
     { t0: 'line:2.start', t1: 'line:3.start', camera: { move: 'push', from: { pos: [0.4, 2.5, 16.5], target: [0.0, 2.4, 1.1], fov: 32 }, to: { pos: [0.3, 2.45, 15.2], target: [0.0, 2.4, 1.1], fov: 32 }, roll: [-2, -1] } },
     { t0: 'line:3.start', t1: 'line:4.start', camera: { move: 'push', from: { pos: [402.5, 4.6, 20], target: [400.4, 3.6, 0.4], fov: 30 }, to: { pos: [402.3, 4.5, 18.5], target: [400.4, 3.6, 0.4], fov: 30 }, roll: [1, 2] } },
     { t0: 'line:4.start', t1: 'line:5.start', camera: { move: 'push', from: { pos: [401.2, 4.4, 11.5], target: [400.6, 4.3, 0.6], fov: 26 }, to: { pos: [401.1, 4.35, 10.4], target: [400.6, 4.3, 0.6], fov: 26 }, roll: [-1, -2] } },

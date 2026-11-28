@@ -10,10 +10,10 @@ const SHORE = {
     { size: [3.2, 0.5, 1.2], at: [-6, 0, -2], color: '#6e4f33' },                // beached rowboat hull
     { size: [0.5, 0.5, 0.5], at: [-2.2, 0, 1.2], color: '#8a6a3a' },              // crate
     { size: [0.45, 0.45, 0.45], at: [-2.2, 0.5, 1.2], color: '#7a5c30' },         // crate on crate
-    { size: [1.2, 5.5, 1.2], at: [-16, 0, -14], color: '#d8d2c4' },               // lighthouse tower (far, left)
-    { size: [1.5, 0.8, 1.5], at: [-16, 5.5, -14], color: '#ffe9a8' },             // lighthouse lamp room
+    { size: [1.2, 5.5, 1.2], at: [-10, 0, -12], color: '#d8d2c4' },               // lighthouse tower (far end of shot 1, left)
+    { size: [1.5, 0.8, 1.5], at: [-10, 5.5, -12], color: '#ffe9a8' },             // lighthouse lamp room
   ],
-  lamps: [ { x: -3.8, z: -0.6, h: 1.6 } ],                                        // fisherman's lantern post (low, clear of shot 1's face)
+  lamps: [ { x: -2.8, z: 0.6, h: 1.6 } ],                                         // fisherman's lantern post (visible practical in shot 1)
   trees: [ { x: 9, z: -4, h: 7 } ],
   fences: [ { from: [-10, -4.5], to: [10, -4.5], h: 1.1, gap: 3, rails: 2, color: '#9a8464' } ],
 };
